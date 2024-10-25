@@ -46,7 +46,7 @@ nav a:hover {
 
 .banner {
   background: url('C:\Users\jhord\Documents\PROGRAMACION\Imagenes') no-repeat center center/cover;
-  color: white;
+  color: black;
   text-align: center;
   padding: 3rem 1rem;
 }
@@ -54,6 +54,13 @@ nav a:hover {
 .banner h2 {
   font-size: 2.5rem; /* Tamaño del texto del banner */
   margin-bottom: 1rem; /* Espacio entre el título y el párrafo */
+}
+.loginbttn{
+  color: white;
+}
+.registerbttn{
+  color: white;
+  
 }
 
 .content {
