@@ -1,0 +1,81 @@
+/* Estilos básicos para darle formato */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #0b171c;
+  color: #f5edef;
+  padding: 1rem 0;
+  text-align: center;
+}
+nav {
+  background: #aa77c3;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+.banner {
+  background: url('C:\Users\jhord\Documents\PROGRAMACION\Imagenes') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.content {
+  padding: 2rem;
+}
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.service-text {
+  flex: 1;
+  padding: 0 1rem;
+}
+.testimonial {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 5px solid #333;
+  margin: 1rem 0;
+}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+@media (max-width: 768px) {
+  .service {
+      flex-direction: column;
+  }
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.boton:hover {
+  background-color: #555;
+}
+
+
