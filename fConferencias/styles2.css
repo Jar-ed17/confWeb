@@ -1,105 +1,287 @@
-/* Estilos básicos */
+/* Estilos básicos para darle formato */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f7fa;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Encabezado principal */
-header.marco {
-    background: linear-gradient(45deg, #1f4e79, #2e8cbf);
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 5px solid #1874a0;
+header {
+  background: linear-gradient(to right, #0b171c, #2a4d52); /* Degradado de fondo */
+  color: #3b151e;
+  padding: 2rem 0; /* Aumentar el padding para más espacio */
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra del encabezado */
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  font-size: 3rem; /* Aumentar el tamaño del texto */
+  margin: 0; /* Eliminar márgenes */
 }
 
 header p {
-    font-size: 1.2em;
-    opacity: 0.8;
+  font-size: 1.2rem; /* Aumentar el tamaño del texto */
+  margin-top: 0.5rem; /* Espacio entre título y párrafo */
 }
 
-/* Sección de conferencias */
-.cursos {
-    padding: 30px 20px;
+nav {
+  background: #aa77c3;
+  color: #a33333;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
-/* Título de cada categoría */
-.cursos h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2em;
-    color: #1f4e79;
+nav a {
+  color: #fff;
+  margin: 0 1.5rem; /* Aumentar el espacio entre enlaces */
+  text-decoration: none;
+  font-weight: bold; /* Hacer los enlaces más prominentes */
+  transition: color 0.3s; /* Añadir transición */
 }
 
-/* Contenedor de cuadrícula */
-.cursos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
+nav a:hover {
+  color: #f5edef; /* Cambiar el color al pasar el mouse */
 }
 
-/* Estilo de las tarjetas */
-.curso {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #ddd;
+.banner {
+  background: url('https://marketing4ecommerce.net/wp-content/uploads/2019/09/nueva-portada-enero-16.jp') no-repeat center center/cover; /* Reemplaza con la ruta de tu imagen */
+  color: rgb(137, 37, 37);
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-.curso:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.banner h2 {
+  font-size: 2.5rem; /* Tamaño del texto del banner */
+  margin-bottom: 1rem; /* Espacio entre el título y el párrafo */
 }
 
-/* Títulos de las conferencias */
-.curso h3 {
-    font-size: 1.6em;
-    color: #2e8cbf;
-    margin-bottom: 10px;
+.content {
+  padding: 2rem;
 }
 
-/* Descripción de las conferencias */
-.curso p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    color: #555;
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Estilo del pie de página */
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.service-text {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.testimonial {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 5px solid #333;
+  margin: 1rem 0;
+}
+
 footer {
-    background: linear-gradient(45deg, #2e8cbf, #1f4e79);
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    border-top: 5px solid #1874a0;
-}
-
-/* Tipografía y detalles generales */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-    
+  .service {
+      flex-direction: column;
+  }
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s; /* Añadir transición */
+}
+
+.boton:hover {
+  background-color: #555; /* Cambio de color al pasar el mouse */
+}
+
+
+
+/*AQUI EMPEZAMOS A DAR ESTRUCTURA A LOS CUADROS*/
+
+
+
+:root {
+    --write: #F5F5F5;
+    --light: #E0C9CB;
+    --tan: #C3A1A0;
+    --pink: #D9AAB7;
+    --rose: #BA7E7E;
+    --dark: #4E4E4E;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para cada sección */
+    gap: 20px; /* Espacio entre los elementos del grid */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 20em; /* Reducimos el ancho de cada tarjeta */
+    background: var(--write);
+    box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.images-and-sizes img {
+    width: 150px; /* Asegura que la imagen ocupe el ancho del contenedor */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 0.6em;
+    color: var(--rose);
+    letter-spacing: 1px;
+}
+
+.images-and-sizes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slidershow-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em; /* Reducimos el espacio entre los botones */
+}
+
+.slidershow-buttons span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--light);
+}
+
+.slidershow-buttons .focus {
+    background: var(--rose);
+}
+
+.pick {
+    text-transform: uppercase;
+    font-size: 0.6em; /* Reducimos el tamaño del texto */
+    text-align: center;
+}
+
+.sizes {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+.sizes span {
+    border: 1px solid var(--light);
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+.sizes .focus {
+    background: var(--rose);
+    color: var(--write);
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto p {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    color: var(--dark);
+    text-align: center;
+}
+
+.producto h1 {
+    font-size: 1em; /* Reducimos el tamaño del título */
+    color: var(--dark);
+    margin-top: -5px;
+    text-align: center;
+}
+
+.producto h2 {
+    color: var(--tan);
+    font-size: 1.5em; /* Reducimos el tamaño del precio */
+    margin-top: -5px;
+    text-align: center;
+}
+
+.producto .descripcion {
+    color: var(--dark);
+    font-size: 0.65em;
+    line-height: 1.4em;
+    text-align: justify;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.3em;
+}
+
+.buttons button {
+    background: #cda9ac;
+    padding: 8px;
+    border: 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 0.6em; /* Reducimos el tamaño del texto del botón */
+    letter-spacing: 1px;
+    color: var(--write);
+    cursor: pointer;
+}
+
+.buttons .add {
+    width: 65%;
+}
+
+.buttons .like {
+    width: 25%;
+}
+
+.buttons button:hover {
+    background: var(--rose);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
     .cursos-grid {
-        padding: 0 10px;
+        grid-template-columns: 1fr; /* En pantallas pequeñas, una columna */
     }
-    
-    .curso {
-        padding: 15px;
+
+    .container {
+        max-width: 100%;
     }
 }
