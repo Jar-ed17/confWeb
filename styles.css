@@ -1,6 +1,42 @@
 /* Estilos básicos para darle formato*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
+
+@font-face {
+  font-family: 'miFuente';
+  src: url(../confWeb/Font-Family/Cream\ Cake.otf);
+}
+
+
+@font-face {
+  font-family: 'miFuente2';
+  src: url(../confWeb/Font-Family/Vogue.ttf);
+}
+
+.fuente2{
+  font-family: miFuente2;
+  font-size: 70px;
+}
+
+.fuente-personalizada{
+  font-family: miFuente;
+  font-size: 30px;
+  color: #f5edef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*PARA HACER LA GALERIA DE FOTOS */
 .galery {
   display: flex;
@@ -23,6 +59,7 @@
 
 
 body {
+  color: #000000;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
