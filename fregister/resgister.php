@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>registro</title>
     <link rel="stylesheet" href="./styleregister.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
 </head>
 <body>
     <div class="register-container">
         <div class="logo-container" id="logo-container"><img width="140%" src="../logo1.jpg" alt="logo1"></div>
-        <form  method="POST" action=""></form>
+        <form  method="post" action="">
             <h2>Crea una nueva cuenta</h2>
             <div> 
             <p>es facil y rapido</p>
-                <div>
                 <?php
                     include "../db/conexion.php" ;
                     include "../db/registro_persona.php";
                 ?>
-                </div>
                 <div>
                     <span>Nombre(s)</span>
                     <input type="text" name="nombre" placeholder="Nombre">
