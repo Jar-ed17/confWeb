@@ -7,7 +7,7 @@ $db="confwebp";
 try {
     $conexion = new PDO("mysql:host=$server;dbname=confwebp", $user, $pass);
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo '<div class="alert alert-success">conexion realizada <br></div>';
+    echo '<div class="alert alert-primary">conexion realizada <br></div>';
 }
 catch(PDOException $e) {
     echo "Conexion fallida: ". $e->getMessage();

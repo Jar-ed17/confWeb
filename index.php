@@ -31,7 +31,7 @@
         <a href="#testimonios">Testimonios</a>
         <a href="#contacto">Contacto</a>
         <a class="loginbttn" href="./fLoginp/loginpage.php">Iniciar sesion</a>
-        <a class="registerbttn" href="./fregister/resgister.php">Registrarse</a>
+        <a class="registerbttn" href="./fregister/registerpage.php">Registrarse</a>
     </nav>
 
 
