@@ -12,7 +12,6 @@
     <div class="register-container">
         <div class="logo-container" id="logo-container"><img width="140%" src="../logo1.jpg" alt="logo1"></div>
         <form  method="post" action=""></form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
             <h2>Crea una nueva cuenta</h2>
             <div> 
             <p>es facil y rapido</p>
@@ -40,7 +39,27 @@
                 <div>
                     <span>Cumpleaños</span>
                     <div>
-                        <!-- Cambio de planes -->
+                        
+                        <input type="date" name="fecha" class="form-control">                     
+                    </div>
+                </div>
+                <div>
+                    <span>email</span>
+                    <input type="email" name="email" placeholder="email">
+                </div>
+
+                <div>
+                    <span>contraseña</span>
+                    <input type="password" name="password" placeholder="contraseña">
+                </div>
+             
+                <button type="submit" name="btnregistrar" class="btn btn-primary" value="ok">Registrate</button >
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+<!-- Cambio de planes -->
 
                         <!-- <select class="select">
                             <option value="month1">Enero</option>
@@ -89,29 +108,5 @@
                             <option value="day30">30</option>
                             <option value="day31">31</option>
                         </select>
-                        <input type="number" id="input-number" class="input-number" min="1924" max="2011" placeholder="Año" />   --> 
-                        <input type="date" name="fecha" class="form-control">                     
-                    </div>
-                </div>
-                <div>
-                    <span>email</span>
-                    <input type="email" name="email" placeholder="email">
-                </div>
-
-                <div>
-                    <span>contraseña</span>
-                    <input type="password" name="password" placeholder="contraseña">
-                </div>
-
-
-
-                
-                <!-- <label for="lastname">Apellidos</label>
-                <input style="width: 92.5%" type="text" id="lastname" name="lastname"> -->
-             
-                <button type="submit" name="btnregistrar" class="btn btn-primary" value="ok">Registrate</button >
-            </div>
-        </form>
-    </div>
-</body>
+                        cambio de planes -->
 </html>

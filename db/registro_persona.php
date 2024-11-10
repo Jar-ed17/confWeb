@@ -17,7 +17,7 @@
 // }
 if (!empty($_POST["btnregistrar"])) {
     if (!empty($_POST["nombre"]) && !empty($_POST["apellido"]) && !empty($_POST["usuario"]) && !empty($_POST["fecha"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
-        // echo "todo ok";
+        echo "todo ok";
         $nombre=$_POST["nombre"];
         $apeliddo=$_POST["apellido"];
         $usuario=$_POST["usuario"];
