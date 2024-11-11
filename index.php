@@ -16,7 +16,7 @@
     <div class="galery">
         <div style="background-image: url(https://marketing4ecommerce.net/wp-content/uploads/2019/09/nueva-portada-enero-16.jpg);"></div>
         <div style="background-image: url(https://www.aristaint.com/hs-fs/hubfs/usan_el_nombre_de_tuti_furlan_para_estafa_soy502_guatemala.jpg?width=940&name=usan_el_nombre_de_tuti_furlan_para_estafa_soy502_guatemala.jpg);"></div>
-        <div style="background-image: url(https://www.eluniversal.com.mx/resizer/v2/OWETLAA7GRG6HGH2374JHL2OXI.jpg?auth=a5b49ec8e833aa5b282581610f88b64af8b5354cfb17d0b5d90062623d2d34aa&smart=true&width=1100&height=666);"></div>
+        <div style="background-image: url(https://media.gq.com.mx/photos/616ece50f3d2ed61e46cb098/master/w_1920,c_limit/GettyImages-80147355.jpg);"></div>
         <div style="background-image: url(https://disconnect.blog/content/images/size/w1200/2024/10/billgates.png);"></div>
         <div style="background-image: url(https://cdn.urbantecno.com/urbantecno/s/2023-01-05-11-27-elon-musk.png);"></div>
     </div>
