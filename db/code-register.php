@@ -14,7 +14,7 @@
             $username_err = "Por favor, Ingrese un nombre de usuario";
         }else{
             // preparando para la declaracion de seleccion
-            $sql = "select id FROM confweb Where usuario = ? ";
+            $sql = "select id FROM usuariosreg Where usuario = ? ";
             
             if($stmt = mysqli_prepare($link, $sql)) {
                 mysqli_stmt_bind_param($stmt,"s", $param_username);
@@ -41,7 +41,7 @@
             $email_err = "Por favor, Ingrese un email";
         }else{
             // preparando para la declaracion de seleccion
-            $sql = "select id FROM confweb Where email = ? ";
+            $sql = "select id FROM usuariosreg Where email = ? ";
             
             if($stmt = mysqli_prepare($link, $sql)) {
                 mysqli_stmt_bind_param($stmt,"s", $param_email);

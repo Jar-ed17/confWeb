@@ -17,9 +17,6 @@
         <div class="ctn-form">
             <img src="../logo1.jpg" alt="" class="logo">
             <h1 class="title">Registrate</h1>
-            <!-- conexion -->
-            <?php include "../db/conexion.php" ?>
-
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
                 <label for="">Nombre se Usuario</label>
