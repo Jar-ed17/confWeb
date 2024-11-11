@@ -92,7 +92,7 @@ input[type="submit"]{
     position: relative;
 
 }
-/* capa min 31 */
+/* Es la opacidad adelante de la imagen */
 .capa{
     width: 100%;
     height: 100%;
@@ -116,7 +116,12 @@ input[type="submit"]{
     font-size: 18px;
     font-weight: 200;
 }
-
+/* texto de error */
+.msg-error{
+    color: red;
+    display: block;
+    margin-top: 10px;
+}
 /* Responsive */
 @media screen and (max-width: 800px) {
     .ctn-text{
