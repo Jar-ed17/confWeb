@@ -1,3 +1,6 @@
+<?php 
+    require "../db/code-login.php" 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +15,15 @@
         <div class="ctn-form">
             <img src="../logo1.jpg" alt="" class="logo">
             <h1 class="title">Inicia Sesion</h1>
-            <?php include "../db/conexion.php" ?>
 
-            <form action="">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
                 <label for="">Email</label>
-                <input type="text">
-                <span class="msg-error"></span>
+                    <input type="text" name="email">
+                    <span class="msg-error"><?php echo $email_err ?> </span>
                 <label for="">Contraseña</label>
-                <input type="password">
-                <span class="msg-error"></span>
+                    <input type="password" name="password">
+                    <span class="msg-error"><?php echo $password_err ?></span>
 
                 <input type="submit" value="Iniciar sesion">
             </form>

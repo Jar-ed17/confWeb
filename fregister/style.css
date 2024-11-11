@@ -116,7 +116,12 @@ input[type="submit"]{
     font-size: 18px;
     font-weight: 200;
 }
-
+/* texto de error */
+.msg-error{
+    color: red;
+    display: block;
+    margin-top: 10px;
+}
 /* Responsive */
 @media screen and (max-width: 800px) {
     .ctn-text{
