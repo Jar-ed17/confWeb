@@ -1,10 +1,22 @@
 <?php
+
+require './db/GetRolerUser.php';
+
         session_start();
+/*         print_r($_SESSION); */
+$id_user = $_SESSION['id'];
         if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             header("location: ../index.php");
             exit;
         }
 
+        $result = Holis($id_user);
+        if($result) {
+            echo 'si es verdadero';
+        } else {    
+            echo 'false';
+        }
+        /* SELECT * FROM PERMISOS where IDUSER = $id_user */
 
 ?>
 <!DOCTYPE html>
