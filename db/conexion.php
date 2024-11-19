@@ -3,6 +3,11 @@
     define("DB_USERNAME","root");
     define("DB_PASSWORD","");
     define("DB_NAME","confwebp");
+
+    $DB_SERVER="DB_SERVER";
+    $DB_USERNAME= "DB_USERNAME";
+    $DB_PASSWORD= "DB_PASSWORD";
+    $DB_NAME= "DB_NAME";
     
     $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
