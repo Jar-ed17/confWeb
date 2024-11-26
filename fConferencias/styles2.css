@@ -1,0 +1,288 @@
+/* Estilos básicos para darle formato */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+/* Estilos básicos */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: transparent;
+  color: #ffffff;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow:transparent;
+  position: absolute;
+  
+}
+/*
+#filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+#filtros label, #filtros select {
+    font-size: 1rem;
+    color: #333;
+}
+*/
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 20em;
+    background: #fff;
+    box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.images-and-sizes img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.sizes span {
+    border: 1px solid #ddd;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+.producto h1 {
+    font-size: 1em;
+    color: #4E4E4E;
+    margin-top: -5px;
+    text-align: center;
+}
+
+.producto h2 {
+    color: #C3A1A0;
+    font-size: 1.5em;
+    margin-top: -5px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.3em;
+}
+
+.buttons .add {
+    width: 65%;
+}
+
+.buttons .like {
+    width: 25%;
+}
+
+footer {
+  background:transparent;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.producto{
+  text-align: center;
+}
+
+.tema{
+  color: #4E4E4E;
+  border: #4E4E4E;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.buttons .add {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #ece7e7;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.6em;
+  transition: background-color 0.3s;
+}
+
+.buttons .add:hover {
+  background-color: #555;
+}
+
+/*AQUI ESA LA BARRA DE FILTROS PARA MODIFICAR*/
+#filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  border-bottom: 1px solid #f1e7e7;
+  margin-bottom: 1rem;
+  
+}
+/*COMANDOS PARA LA LETRAS DE OS FILTROS*/
+#filtros label {
+  font-size: 1rem;
+  color: #f6f1f1;
+  margin-bottom: 0.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*COMANDOS PARA LA LETRA DE LA SELECCION DE FILTROS*/
+#filtros select{
+  font-size: 1rem;
+  color: #060505;
+  margin-bottom: 0.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+  
+#resenas {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+#resenas h2, #resenas h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#lista-resenas .resena {
+  background-color: #ae2020;
+  border: 1px solid #a23636;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+#lista-resenas .resena p {
+  margin: 0.5rem 0;
+}
+
+#form-resena {
+  margin-top: 1rem;
+}
+
+#form-resena label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+#form-resena select, #form-resena textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#form-resena .boton {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#form-resena .boton:hover {
+  background-color: #555;
+}
+
+.showcase{
+  position: absolute;
+  right: 0%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #040404;
+  transition: 0.5s;
+  z-index: 2;
+ }
+
+.showcase.active{
+  right: 300px;
+}
+
+.showcase video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+@media (max-width: 991px){
+  .showcase
+  .showcase header{
+      padding: 40px;
+  }
+  .text h2{
+      font-size: 3em;
+  }
+}
+ h2{
+  color: #ece7e7;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+ }
+
+/* Ensure video stays in the background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Ensure all content layers above the video */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+/* Overlay styling for all sections */
+header, #filtros, .cursos, footer {
+    position: relative;
+    z-index: 2;
+}
