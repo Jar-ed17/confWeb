@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Conferencias - Quick Conferences</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/fConferencias/styles2.css">
+    <link rel="stylesheet" href="styles2.css">
+   <?php require "../db/conexion.php"?>
 </head>
 
     <body>
@@ -14,7 +15,7 @@
         <h1>Conferencias Quick Conferences</h1>
         <p>Explora nuestras conferencias pagadas y gratuitas</p>
     </header>
-    <video class="video-background" src="/fVideos/fondo4k.mp4" muted loop autoplay></video>
+    <video class="video-background" src="../fVideos/fondo4k.mp4" muted loop autoplay></video>
 
     <!-- Filtros de búsqueda avanzada -->
      
@@ -58,25 +59,38 @@
         <h2>CONFERENCIAS PAGADAS</h2>
         <div class="cursos-grid">
             <!-- Ejemplo de una conferencia pagada -->
-        
+                    <!-- insertando el while antes de los divs -->
+                    <?php
+            $consulta="SELECT conferencias.id_conf, conferencias.nombre_conf, conferencias.precio, conferencias.brev_descrip, usuariosreg.usuario 
+                FROM conferencias JOIN usuariosreg ON conferencias.id_userFK = usuariosreg.id;";
+            $result = $link->query($consulta);
+    
+            if ($result->num_rows > 0) {
+            // Salida de datos de cada fila
+            while($row = $result->fetch_assoc()) {
+            ?>
             <div class="container" data-tema="Liderazgo" data-nivel="Avanzado" data-modalidad="pagado" data-duracion="larga">
                 <div class="images-and-sizes">
                     <img alt="" src="https://marketing4ecommerce.net/wp-content/uploads/2019/09/nueva-portada-enero-16.jpg">
-                    <p class="pick">Mark Zunkenber</p>
+                    <p class="pick"><?php echo $row['usuario'] ?></p>
                 </div>
                 <div class="producto">
                     <p>Conferencia</p>
-                    <h1>Liderazgo Inspirador</h1>
-                    <h2>109,99 €</h2>
-                    <p class="descripcion">
-                        Cómo ser un líder influyente y motivador en el entorno empresarial.
-                    </p>
+                    <h1><?php echo $row['nombre_conf'] ?></h1>
+                    <h2><?php echo $row['precio'] ?></php></h2>
+                    <p class="descripcion"><?php echo $row['brev_descrip'] ?>.</p>
                     <div class="buttons">
                         <a href="detalles.html?id=1" class="add">Ver Detalles</a>
                         <button class="like"><span>♥️</span></button>
                     </div>
                 </div>
             </div>
+            <?php
+            }
+            } else {
+                echo "0 resultados";
+            }
+                ?>
 
             <!-- Añadir más conferencias con diferentes valores de tema, nivel, modalidad y duración -->
 

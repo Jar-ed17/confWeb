@@ -16,11 +16,11 @@
         <h2 class="logo">LOGO EMPRESA</h2>
         <nav>
             <ul class="nav-menu">
-                <li><a href="/fConferencias/conferencias.html">Conferencias</a></li>
+                <li><a href="fConferencias/conferencias.php">Conferencias</a></li>
                 <li><a href="#">Pláticas</a></li>
                 <li><a href="#">Capacitaciones</a></li>
-                <li><a href="/fPerfil/perfil.html">Perfil</a></li>
-                <li><a href="/fRegistro/registro.html">Registro</a></li>
+                <li><a href="fPerfil/perfil.html">Perfil</a></li>
+                <li><a href="fregister/registerpage.php">Registro</a></li>
             </ul>
         </nav>
      </header>
