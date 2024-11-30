@@ -13,7 +13,9 @@
     <div class="container-all">
 
         <div class="ctn-form">
-            <img src="../logo1.jpg" alt="" class="logo">
+            <a a href="../index.php">
+                <img src="../logo1.jpg" alt="" class="logo">
+            </a>
             <h1 class="title">Inicia Sesion</h1>
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">

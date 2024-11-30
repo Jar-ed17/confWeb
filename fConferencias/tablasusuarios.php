@@ -79,7 +79,7 @@ echo "<table border=1>";
 
                                 // Primer ejemplo de publicaciones tablas
                                 
-    // $consulta = "SELECT * FROM conferencias";
+    //  
     $consulta="SELECT conferencias.id_conf, conferencias.nombre_conf, conferencias.precio, conferencias.brev_descrip, usuariosreg.usuario 
         FROM conferencias JOIN usuariosreg ON conferencias.id_userFK = usuariosreg.id;";
     $resultado = $link->query($consulta);
