@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Conferencias - Quick Conferences</title>
+    <title>Platicas - Quick Conferences</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles2.css">
    <?php require "../db/conexion.php"?>
@@ -12,8 +12,8 @@
     <div class="content-wrapper">
     
     <header class="child-element">
-        <h1>Conferencias Quick Conferences</h1>
-        <p>Explora nuestras conferencias pagadas y gratuitas</p>
+        <h1>Platicas Quick Conferences</h1>
+        <p>Explora nuestras Platicas pagadas y gratuitas</p>
     </header>
     <video class="video-background" src="../fVideos/EMPRE.mp4" muted loop autoplay></video>
 
@@ -53,16 +53,16 @@
             <option value="larga">Larga (más de 3 horas)</option>
         </select>
     </section>
-    <!-- Catálogo de conferencias -->
+    <!-- Catálogo de platicas -->
     
     <section class="cursos" id="catalogo">
-        <h2>CONFERENCIAS PAGADAS</h2>
+        <h2>PLATICAS PAGADAS</h2>
         <div class="cursos-grid">
             <!-- Ejemplo de una conferencia pagada -->
                     <!-- insertando el while antes de los divs -->
                     <?php
-            $consulta="SELECT conferencias.id_conf, conferencias.nombre_conf, conferencias.precio, conferencias.brev_descrip, usuariosreg.usuario 
-                FROM conferencias JOIN usuariosreg ON conferencias.id_userFK = usuariosreg.id;";
+            $consulta="SELECT platicas.id_conf, plricas.nombre_conf, platicas.precio, platicas.brev_descrip, usuariosreg.usuario 
+                FROM platicas JOIN usuariosreg ON platicas.id_userFK = usuariosreg.id;";
             $result = $link->query($consulta);
     
             if ($result->num_rows > 0) {
@@ -92,11 +92,11 @@
             }
                 ?>
 
-            <!-- Añadir más conferencias con diferentes valores de tema, nivel, modalidad y duración -->
+            <!-- Añadir más platicas con diferentes valores de tema, nivel, modalidad y duración -->
 
         </div>
 
-        <h2>CONFERENCIAS GRATUITAS</h2>
+        <h2>PLATICAS GRATUITAS</h2>
         <div class="cursos-grid">
             <div class="container" data-tema="Emocional" data-nivel="Intermedio" data-modalidad="gratuito" data-duracion="corta">
                 <div class="images-and-sizes">
@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <!-- Más conferencias gratuitas con diferentes valores de tema, nivel, modalidad y duración -->
+            <!-- Más platicas gratuitas con diferentes valores de tema, nivel, modalidad y duración -->
         </div>
     </section>
 

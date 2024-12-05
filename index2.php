@@ -1,19 +1,12 @@
 <?php
-        // session_start();
-
-        // if (($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-        //     header("location: index2.php");
-        //         exit;
-        //     }
-
         session_start();
 
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-            header("location: index2.php");
+        if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+            header("location: index.php");
             exit;
-}
+        }
 
-        
+
 ?>
 <!DOCTYPE html>
  <html>
@@ -30,15 +23,14 @@
 <body>
 <section class="showcase">
     <header>
-        <h2 class="logo"><a href="index.php" style="color: white;text-decoration:none;">Quick Conferences</a>  </h2>
+    <h2 class="logo"><a href="index.php" style="color: white;text-decoration:none;">Quick Conferences</a>  </h2>
         <nav>
             <ul class="nav-menu">
                 <li><a href="fConferencias/conferencias.php">Conferencias</a></li>
                 <li><a href="fPlaticas/platicas.php">Pláticas</a></li>
                 <!-- <li><a href="#">Capacitaciones</a></li> -->
                 <li><a href="">Perfil</a></li>  
-                <li><a href="fregister/registerpage.php">Registro</a></li>
-                <li><a href="fLoginp/loginpage.php">Iniciar Sesion</a></li>
+                <li><a href="db/cerrar_sesion.php" class="close-sesion">Cerrar Sesion</a></li>
             </ul>
         </nav>
      </header>

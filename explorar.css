@@ -210,6 +210,7 @@ header .logo{
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+    text-decoration: none;
 }
 nav a{
     text-decoration: none;

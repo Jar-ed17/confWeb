@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Conferencista - Quick Conferences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header class="child-element">
+        <h1>Detalles del Conferencista</h1>
+    </header>
+
+    <section id="detalles-conferencista">
+        <div class="biografia">
+            <h2>Biografía</h2>
+            <p id="bio">...</p>
+        </div>
+        
+        <div class="experiencia">
+            <h2>Experiencia</h2>
+            <p id="experiencia">...</p>
+        </div>
+        
+        <div class="especialidades">
+            <h2>Especialidades</h2>
+            <ul id="especialidades"></ul>
+        </div>
+        
+        <a href="platicas.php" class="boton">Volver al Catálogo</a>
+    </section>
+
+    <!-- Sección de reseñas y calificaciones -->
+    <section id="resenas">
+        <h2>Reseñas y Calificaciones</h2>
+        <div id="lista-resenas"></div>
+        
+        <h3>Dejar una Reseña</h3>
+        <form id="form-resena">
+            <label for="calificacion">Calificación:</label>
+            <select id="calificacion">
+                <option value="5">5 - Excelente</option>
+                <option value="4">4 - Muy Buena</option>
+                <option value="3">3 - Buena</option>
+                <option value="2">2 - Regular</option>
+                <option value="1">1 - Mala</option>
+            </select>
+            
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" rows="4" required></textarea>
+            
+            <button type="submit" class="boton">Enviar Reseña</button>
+        </form>
+    </section>
+    
+    <script src="detalles.js"></script>
+</body>
+</html>
