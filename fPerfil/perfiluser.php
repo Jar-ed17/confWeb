@@ -42,7 +42,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             $consulta="SELECT usuariosreg.usuario, usuariosreg.descrip_perfil, COUNT(conferencias.id_conf) AS numero_conferencias
                         FROM usuariosreg
                         LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
-                        WHERE usuariosreg.usuario = 'jared'
+                        WHERE usuariosreg.usuario = 'pedro'
                         GROUP BY usuariosreg.usuario, usuariosreg.descrip_perfil;";
             $result = $link->query($consulta);
     
