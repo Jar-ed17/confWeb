@@ -6,14 +6,14 @@
         
         $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-        if ($link == false) {
-            die("Error en la conexion". mysqli_connect_error());
-        }else { echo"todo gud";
-                // echo "$DB_SERVER -";
-                // echo "$DB_USERNAME -";
-                // echo "$DB_PASSWORD -";
-                // echo $DB_NAME;
-        }
+        // if ($link == false) {
+        //     die("Error en la conexion". mysqli_connect_error());
+        // }else { echo"todo gud";
+        //         // echo "$DB_SERVER -";
+        //         // echo "$DB_USERNAME -";
+        //         // echo "$DB_PASSWORD -";
+        //         // echo $DB_NAME;
+        // }
 ///////////////////////////////////////////////////////////////////////
 //     define("DB_SERVER","localhost");
 //     define("DB_USERNAME","root");

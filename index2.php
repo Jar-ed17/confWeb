@@ -29,7 +29,7 @@
                 <li><a href="fConferencias/conferencias.php">Conferencias</a></li>
                 <li><a href="fPlaticas/platicas.php">Pláticas</a></li>
                 <!-- <li><a href="#">Capacitaciones</a></li> -->
-                <li><a href="">Perfil</a></li>  
+                <li><a href="fPerfil/perfiluser.php">Perfil</a></li>  
                 <li><a href="db/cerrar_sesion.php" class="close-sesion">Cerrar Sesion</a></li>
             </ul>
         </nav>
