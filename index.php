@@ -27,8 +27,6 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="fConferencias/conferencias.php">Conferencias</a></li>
-                <li><a href="fPlaticas/platicas.php">Pláticas</a></li>
-                <!-- <li><a href="#">Capacitaciones</a></li> -->
                 <li><a href="fLoginp/loginpage.php">Perfil</a></li>  
                 <li><a href="fregister/registerpage.php">Registro</a></li>
                 <li><a href="fLoginp/loginpage.php">Iniciar Sesion</a></li>

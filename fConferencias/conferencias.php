@@ -70,8 +70,9 @@
             <!-- Ejemplo de una conferencia pagada -->
                     <!-- insertando el while antes de los divs -->
                     <?php
-            $consulta="SELECT conferencias.id_conf, conferencias.nombre_conf, conferencias.precio, conferencias.brev_descrip, usuariosreg.usuario 
-                FROM conferencias JOIN usuariosreg ON conferencias.id_userFK = usuariosreg.id;";
+            $consulta="SELECT conferencias.nombre_conf, usuariosreg.usuario, usuariosreg.imgUser, conferencias.categoria, conferencias.precio, conferencias.brev_descrip
+                        FROM conferencias
+                        JOIN usuariosreg ON conferencias.id_userFK = usuariosreg.id;";
             $result = $link->query($consulta);
     
             if ($result->num_rows > 0) {
@@ -80,7 +81,7 @@
             ?>
             <div class="container" data-tema="Liderazgo" data-nivel="Avanzado" data-modalidad="pagado" data-duracion="larga">
                 <div class="images-and-sizes">
-                    <img alt="" src="https://marketing4ecommerce.net/wp-content/uploads/2019/09/nueva-portada-enero-16.jpg">
+                    <img alt="" src="<?php echo $row['imgUser']; ?>">
                     <p class="pick"><?php echo $row['usuario'] ?></p>
                 </div>
                 <div class="producto">
@@ -89,7 +90,7 @@
                     <h2><?php echo $row['precio'] ?></php></h2>
                     <p class="descripcion"><?php echo $row['brev_descrip'] ?>.</p>
                     <div class="buttons">
-                        <a href="detalles.html?id=1" class="add">Ver Detalles</a>
+                        <a href="detalles.html" class="add">Ver Detalles</a>
                         <button class="like"><span>♥️</span></button>
                     </div>
                 </div>
@@ -110,7 +111,7 @@
             <div class="container" data-tema="Emocional" data-nivel="Intermedio" data-modalidad="gratuito" data-duracion="corta">
                 <div class="images-and-sizes">
                     <img alt="" src="https://www.ebankingnews.com/wp-content/uploads/2024/02/1706792232-padre-rico-padre-pobre-bitcoin-1-95xO42-696x392-1.png">
-                    <p class="pick">Viejito Chino</p>
+                    <p class="pick">Xin Xao</p>
                 </div>
                 <div class="producto">
                     <p>Conferencia</p>
