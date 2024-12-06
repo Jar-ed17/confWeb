@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick conference</title>
+    <meta http-equiv="Refresh" content="0; url='../fPerfil/perfiluser.php" />
+</head>
+<body>
 <?php
         session_start();
 
@@ -8,7 +17,7 @@
 
 
 
-require_once "../db/conexion.php";
+require "../db/conexion.php";
 
 // Obtener datos del formulario
 $usuario = $_POST['usuario'];
@@ -16,11 +25,7 @@ $nombre_conf = $_POST['nombre_conf'];
 $categoria = $_POST['categoria'];
 $precio = $_POST['precio'];
 $brev_descrip = $_POST['brev_descrip'];
-// echo $usuario ;
-// echo $nombre_conf;
-// echo $categoria;
-// echo $precio;
-// echo $brev_descrip;
+
 // Obtener el id del usuario
 $sql = "SELECT id FROM usuariosreg WHERE usuario='$usuario'";
 $result = $link->query($sql);
@@ -44,3 +49,6 @@ if ($result->num_rows > 0) {
 
 $link->close();
 ?>
+
+</body>
+</html>

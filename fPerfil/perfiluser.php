@@ -42,7 +42,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             $consulta="SELECT usuariosreg.usuario, usuariosreg.descrip_perfil, COUNT(conferencias.id_conf) AS numero_conferencias
                         FROM usuariosreg
                         LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
-                        WHERE usuariosreg.usuario = 'pedro'
+                        WHERE usuariosreg.usuario = 'Pedro'
                         GROUP BY usuariosreg.usuario, usuariosreg.descrip_perfil;";
             $result = $link->query($consulta);
     
@@ -68,7 +68,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="opcciones-perfil">
                 
                 <!-- Button trigger modal -->
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar foto</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar Descripcion</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -106,7 +106,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="../fcontroladorConf/controladorConf.php" method="POST" enctype="multipart/form-data">
                         
 
                                 <input class="form-control" type="text" name="usuario" placeholder="Usuario"><br>

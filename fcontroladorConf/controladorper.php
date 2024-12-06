@@ -30,8 +30,7 @@ if ($result->num_rows > 0) {
     $id_userFK = $row['id'];
 
     // Insertar datos en la tabla conferencias
-    $sql = "UPDATE usuariosreg SET descrip_perfil = '$descrip_perfil' WHERE id = 1;
-";
+    $sql = "UPDATE usuariosreg SET descrip_perfil = '$descrip_perfil' WHERE id = 1;";
 
     if ($link->query($sql) === TRUE) {
         echo "Nueva conferencia insertada correctamente";
