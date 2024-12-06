@@ -23,7 +23,7 @@
 <body>
 <section class="showcase">
     <header>
-    <h2 class="logo"><a href="index.php" style="color: white;text-decoration:none;">Quick Conferences</a>  </h2>
+        <h2 class="logo"><a href="index.php" style="color: white;text-decoration:none;">Quick Conferences</a>  </h2>
         <nav>
             <ul class="nav-menu">
                 <li><a href="fConferencias/conferencias.php">Conferencias</a></li>

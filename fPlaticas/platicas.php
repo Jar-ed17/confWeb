@@ -15,11 +15,12 @@
         <h1>Platicas Quick Conferences</h1>
         <p>Explora nuestras Platicas pagadas y gratuitas</p>
     </header>
-    <video class="video-background" src="../fVideos/EMPRE.mp4" muted loop autoplay></video>
+    <video class="video-background" src="../fVideos/wallvideo.mp4" muted loop autoplay></video>
 
     <!-- Filtros de búsqueda avanzada -->
      
-    <section id="filtros">
+    
+    <!-- Catálogo<section id="filtros">
         <label for="tema">Filtrar por Tema:</label>
         <select id="tema">
             <option value="todos">Todos</option>
@@ -52,8 +53,7 @@
             <option value="media">Media (1-3 horas)</option>
             <option value="larga">Larga (más de 3 horas)</option>
         </select>
-    </section>
-    <!-- Catálogo de platicas -->
+    </section> de platicas -->
     
     <section class="cursos" id="catalogo">
         <h2>PLATICAS PAGADAS</h2>

@@ -1,18 +1,11 @@
 <?php
-        // session_start();
-
-        // if (($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-        //     header("location: index2.php");
-        //         exit;
-        //     }
-
+        // Script para redireccionar a index2 si ya estas loggeado 
         session_start();
 
         if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             header("location: index2.php");
             exit;
 }
-
         
 ?>
 <!DOCTYPE html>

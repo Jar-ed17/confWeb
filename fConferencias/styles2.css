@@ -257,12 +257,18 @@ footer {
       font-size: 3em;
   }
 }
+h2.logo{
+  text-align: left;
+  color: white;
+
+ }
  h2{
   color: #ece7e7;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   
  }
+ 
 
 /* Ensure video stays in the background */
 .video-background {

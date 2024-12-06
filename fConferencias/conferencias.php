@@ -8,17 +8,26 @@
    <?php require "../db/conexion.php"?>
 </head>
 
-    <body>
-    <div class="content-wrapper">
+<body>
     
+    <div class="content-wrapper">
+    <div><a href="index.php" style="color: white;text-decoration:none; text-align: left;    color: #fff;text-transform: uppercase;cursor: pointer;text-decoration: none;">Quick Conferences</a></div>
     <header class="child-element">
-        <h1>Conferencias Quick Conferences</h1>
+        <h1>Conferencias en Quick Conferences</h1>
         <p>Explora nuestras conferencias pagadas y gratuitas</p>
+        <?php        
+        session_start();
+
+        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+            echo "<p>Prueba de saber si se pone si esta loggeado uno </p>";
+} 
+?>
     </header>
-    <video class="video-background" src="../fVideos/EMPRE.mp4" muted loop autoplay></video>
+    <video class="video-background" src="../fVideos/wallvideo.mp4" muted loop autoplay></video>
+     <!-- <img class="image-background" src="https://blog.orvium.io/content/images/size/w2000/2023/06/alexandre-pellaes-6vAjp0pscX0-unsplash-1.jpg"> -->
 
     <!-- Filtros de búsqueda avanzada -->
-     
+<!--      
     <section id="filtros">
         <label for="tema">Filtrar por Tema:</label>
         <select id="tema">
@@ -52,7 +61,7 @@
             <option value="media">Media (1-3 horas)</option>
             <option value="larga">Larga (más de 3 horas)</option>
         </select>
-    </section>
+    </section> -->
     <!-- Catálogo de conferencias -->
     
     <section class="cursos" id="catalogo">
