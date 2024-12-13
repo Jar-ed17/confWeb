@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }else{
             echo"Algo salio mal, intentalo mas tarde";
         }
-    }
+        }
     mysqli_close($link);
 
 }

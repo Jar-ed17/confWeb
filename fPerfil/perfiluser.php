@@ -39,7 +39,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
             <div class="datos-perfil">
             <?php
-            $consulta="SELECT usuariosreg.usuario, usuariosreg.descrip_perfil, COUNT(conferencias.id_conf) AS numero_conferencias
+            $consulta="SELECT usuariosreg.usuario, usuariosreg.id, usuariosreg.descrip_perfil, COUNT(conferencias.id_conf) AS numero_conferencias
                         FROM usuariosreg
                         LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
                         WHERE usuariosreg.usuario = 'Pedro'
@@ -49,8 +49,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             if ($result->num_rows > 0) {
             // Salida de datos de cada fila
             while($row = $result->fetch_assoc()) {
+                // session_start();    
+                if (isset($_SESSION['usuario'])) {
+                    $usuario = $_SESSION['usuario'];
+                    echo $usuario;
+                    echo $_SESSION;
+                } else {
+                    echo "No hay usuario logueado.";
+                }
             ?>
+
                 <h4 class="titulo-usuario"><?php echo $row['usuario'] ?>
+                <h4 class="titulo-usuario"><?php echo $row['id'] ?>
             </h4>
                 <p class="bio-usuario"><?php echo $row['descrip_perfil'] ?></p>
                 <ul class="lista-perfil">
