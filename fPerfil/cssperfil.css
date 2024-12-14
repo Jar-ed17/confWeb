@@ -227,3 +227,12 @@ Copiar esto
         display: inline-block;
     }
 }
+.mensaje a {
+    color: inherit;
+    margin-right: .5rem;
+    display: inline-block;
+}
+.mensaje a:hover {
+    color: #309B76;
+    transform: scale(1.4)
+}

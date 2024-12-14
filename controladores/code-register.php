@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../db/conexion.php");
+    include("../db/conexion.php");
 
     //Definicion Variables e iniciarlizar
     $username = $email = $password = "";

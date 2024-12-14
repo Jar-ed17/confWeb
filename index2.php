@@ -38,8 +38,9 @@
 
     <nav>
         <a href="fConferencias/conferencias.php">Conferencias</a>
-        <a href="fLoginp/loginpage.php">Perfil</a>
+        <a href="fperfil/perfiluser.php">Perfil</a>
         <a href="controladores/cerrar_sesion.php">Cerrar sesion</a>
+        <a href="logTest.php">Test seguridad</a>
     </nav>
 
 

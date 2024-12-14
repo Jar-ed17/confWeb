@@ -139,9 +139,6 @@
     <script src="filtros.js"></script>
     <script src="main2.js"></script>
 
-
     </div>
     </body>
-    
-
 </html>

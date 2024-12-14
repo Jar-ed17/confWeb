@@ -1,5 +1,5 @@
 <?php 
-    require "../controladores/code-login.php" 
+    // require "../controladores/code-login.php" 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniar sesion</title>
     <link rel="stylesheet" href="style.css">
+    <?php include ('../db/conexion.php');?>
 </head>
 <body>
     <div class="container-all">
@@ -18,14 +19,15 @@
             </a>
             <h1 class="title">Inicia Sesion</h1>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-
+            <!-- <form action="<?//php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"> -->
+                <form action="" method="post">
+                <?php include ('../controladores/code-login.php'); ?>
                 <label for="">Email</label>
-                    <input type="text" name="email">
-                    <span class="msg-error"><?php echo $email_err ?> </span>
+                    <input type="text" name="usuario">
+                    <span class="msg-error"><?php //echo $email_err ?> </span>
                 <label for="">Contraseña</label>
                     <input type="password" name="password">
-                    <span class="msg-error"><?php echo $password_err ?></span>
+                    <span class="msg-error"><?php //echo $password_err ?></span>
 
                 <input type="submit" value="Iniciar sesion">
             </form>

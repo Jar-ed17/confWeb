@@ -1,10 +1,18 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: ../index.php");
-    exit;
+if (!isset($_SESSION['usuario'])) {
+    header('Location: ../floginp/loginpage.php');
+    exit();
 }
+
+
+// session_start();
+
+// if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+//     header("location: ../index.php");
+//     exit;
+// }
 
 ?>
 <!DOCTYPE html>
@@ -48,19 +56,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     
             if ($result->num_rows > 0) {
             // Salida de datos de cada fila
-            while($row = $result->fetch_assoc()) {
-                // session_start();    
-                if (isset($_SESSION['usuario'])) {
-                    $usuario = $_SESSION['usuario'];
-                    echo $usuario;
-                    echo $_SESSION;
-                } else {
-                    echo "No hay usuario logueado.";
-                }
+            while($row = $result->fetch_assoc()) {                
             ?>
-
-                <h4 class="titulo-usuario"><?php echo $row['usuario'] ?>
-                <h4 class="titulo-usuario"><?php echo $row['id'] ?>
+                <!-- Codigo para saber el usuario actual -->
+                <h4 class="titulo-usuario"><?php if (isset($_SESSION['usuario'])) {$usuario = $_SESSION['usuario'];echo $usuario;} else {echo "No hay usuario logueado.";}?>
+                <h4 class="titulo-usuario"><?php $session_id = session_id(); echo $session_id;?>
             </h4>
                 <p class="bio-usuario"><?php echo $row['descrip_perfil'] ?></p>
                 <ul class="lista-perfil">
