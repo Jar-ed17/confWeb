@@ -1,5 +1,5 @@
 <?php 
-    require "../db/code-login.php" 
+    require "../controladores/code-login.php" 
 ?>
 <!DOCTYPE html>
 <html lang="en">

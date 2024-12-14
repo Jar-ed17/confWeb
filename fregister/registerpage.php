@@ -1,6 +1,6 @@
 <?php 
 
-        include("../db/code-register.php");
+        include("../controladores/code-register.php");
 
 ?>
 <!DOCTYPE html>
