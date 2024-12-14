@@ -7,7 +7,7 @@
         exit();
     }
 
-require_once("conexion.php");
+require_once("../db/conexion.php");
 
 $email = $password ="";
 $email_err = $password_err = "";

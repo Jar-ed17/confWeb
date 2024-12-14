@@ -1,11 +1,10 @@
 <?php
-        // Script para redireccionar a index2 si ya estas loggeado 
         // session_start();
 
-        // if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        //     header("location: index2.php");
+        // if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+        //     header("location: index.php");
         //     exit;
-// }
+        // }
         
 ?>
 
@@ -40,8 +39,7 @@
     <nav>
         <a href="fConferencias/conferencias.php">Conferencias</a>
         <a href="fLoginp/loginpage.php">Perfil</a>
-        <a href="fregister/registerpage.php">Registro</a>
-        <a href="fLoginp/loginpage.php">Iniciar Sesion</a>
+        <a href="controladores/cerrar_sesion.php">Cerrar sesion</a>
     </nav>
 
 
