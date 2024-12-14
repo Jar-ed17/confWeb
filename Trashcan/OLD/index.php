@@ -1,3 +1,16 @@
+<?php
+        // Script para redireccionar a index2 si ya estas loggeado 
+        session_start();
+
+        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+            header("location: index2.php");
+            exit;
+}
+        
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +38,7 @@
 
 
     <nav>
-        <a href="#conferencias">Conferencias</a>
+        <a href="/confWeb/fConferencias copy/conferencias">Conferencias</a>
         <a href="#platicas">Pláticas</a>
         <a href="#capacitaciones">Capacitaciones</a>
         <a href="#testimonios">Testimonios</a>
