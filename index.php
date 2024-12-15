@@ -1,19 +1,29 @@
 <?php
-        // Script para redireccionar a index2 si ya estas loggeado 
-        // session_start();
-
-        // if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        //     header("location: index2.php");
-        //     exit;
-// }
-
+// Inicio de sesión
 session_start();
 
-if (($_SESSION )) {
-    header('Location: index2.php');
+// Redirección si ya está logueado
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: index2.php");
     exit();
 }
-        
+
+// Conexión a la base de datos
+$servername = "localhost"; // Cambia según tu configuración
+$username = "root";        // Cambia según tu configuración
+$password = "";            // Cambia según tu configuración
+$dbname = "confwebp";      // Nombre de la base de datos
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error al conectar a la base de datos: " . $conn->connect_error);
+}
+
+// Consulta para obtener las conferencias
+$sql = "SELECT id_conf, nombre_conf, categoria, precio, brev_descrip FROM conferencias";
+$result = $conn->query($sql);
 ?>
 
 
@@ -58,52 +68,33 @@ if (($_SESSION )) {
         <p>Explora nuestros servicios y elige el que mejor se adapte a tu evento</p>
     </section>
 
-
-
     <section id="conferencias" class="content">
-        <h2>Conferencias</h2>
-        <div class="service">
-            <img src="https://media.istockphoto.com/id/499517325/es/foto/un-hombre-hablando-en-una-conferencia-de-negocios.jpg?s=612x612&w=0&k=20&c=vARUwEh6tZGalu05GbbSZnB8ywm6TICeFlsJsl_ZoG4=" height="50%" width="50%" title="Es una imagen muy bonita" alt="La imagen no fue encontrada">
-            <div class="service-text">
-                <p>Nuestras conferencias son ideales para motivar y capacitar a grandes audiencias. Con temas como liderazgo, innovación y crecimiento personal, logramos impactar a los asistentes de forma memorable.</p>
-                <p><strong>Formato:</strong> Presencial o virtual, sesiones de 1 a 2 horas.</p>
-                <br>
-                <button class="boton" onclick="window.location.href='/confWeb/fConferencias/conferencias.php';">Más Informes</button>
-            </div>
+        <h2>Conferencias Disponibles</h2>
+        <div class="conferencias-list">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "
+                    <div class='conferencia-item' style='border: 1px solid #ccc; margin: 10px; padding: 15px; border-radius: 10px; background: #f9f9f9;'>
+                        <h3 style='color: #1e3c72;'>{$row['nombre_conf']}</h3>
+                        <p><strong>Categoría:</strong> {$row['categoria']}</p>
+                        <p><strong>Precio:</strong> $ {$row['precio']}</p>
+                        <p><strong>Descripción:</strong> {$row['brev_descrip']}</p>
+                        <button class='boton' style='margin-top: 10px; padding: 10px 15px; background: #1e3c72; color: white; border: none; border-radius: 5px; cursor: pointer;'
+                        onclick=\"alert('¡Gracias por tu interés en {$row['nombre_conf']}!')\">Más Información</button>
+                    </div>";
+                }
+            } else {
+                echo "<p>No hay conferencias disponibles en este momento.</p>";
+            }
+            $conn->close();
+            ?>
         </div>
     </section>
 
 
 
-    <section id="platicas" class="content">
-        <h2>Pláticas</h2>
-        <div class="service">
-            <img src="https://media.istockphoto.com/id/1413761479/es/foto/pareja-madura-que-se-re%C3%BAne-con-asesor-financiero-para-inversiones.jpg?s=612x612&w=0&k=20&c=48v-6w9CkK-uOyD2d5uTChS9EOlCv-bTELZaWw6jCd4=" alt="Plática en Quick Conferences">
-            <div class="service-text">
-                <p>Ofrecemos pláticas informales y participativas, enfocadas en temas específicos como bienestar laboral, trabajo en equipo y comunicación efectiva.</p>
-                <p><strong>Formato:</strong> Presencial, dinámicas de 45 minutos a 1 hora.</p>
-                <br>
-                <button class="boton" onclick="window.location.href='./fPlaticas/platicas copy.html';">Más Informes</button>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="capacitaciones" class="content">
-        <h2>Capacitaciones</h2>
-        <div class="service">
-            <img src="https://img.freepik.com/foto-gratis/todos-sonrien-escuchan-grupo-personas-conferencia-negocios-aula-moderna-dia_146671-16288.jpg" alt="Capacitación en Quick Conferences">
-            <div class="service-text">
-                <p>Nuestras capacitaciones se centran en el desarrollo de habilidades técnicas y profesionales. Contamos con programas de actualización, gestión de proyectos y herramientas digitales.</p>
-                <p><strong>Formato:</strong> Presencial o virtual, talleres de 2 a 4 horas.</p>
-                <br>
-                <button class="boton" onclick="window.location.href='./fCapacitaciones/capacitaciones.html';">Más Informes</button>
-            </div>
-        </div>
-    </section>
-
-
+    
 
     <section id="testimonios" class="content">
         <h2>Testimonios</h2>
@@ -118,6 +109,9 @@ if (($_SESSION )) {
 
 
 
+
+
+
     <footer id="contacto">
         <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.comm</p>
     </footer>
@@ -125,3 +119,4 @@ if (($_SESSION )) {
     
 </body>
 </html>
+
