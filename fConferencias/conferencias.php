@@ -11,10 +11,29 @@
 <body>
     
     <div class="content-wrapper">
-    <div><a href="/confWeb/index.php" style="color: white;text-decoration:none; text-align: left;    color: #fff;text-transform: uppercase;cursor: pointer;text-decoration: none;">Quick Conferences</a></div>
-    <header class="child-element">
-        <h1>Conferencias en Quick Conferences</h1>
-        <p>Explora nuestras conferencias pagadas y gratuitas</p>
+
+<div style="background: transparent; padding: 15px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); border-radius: 5px;">
+<a href="/confWeb/index.php" style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: transform 0.3s, color 0.3s;"
+onmouseover="this.style.color='#ffcc00'; this.style.transform='scale(1.1)';"
+onmouseout="this.style.color='white'; this.style.transform='scale(1)';">
+Pagina Principal
+  </a>
+</div>
+ <!--Modificaciones para implementar en el archivo principal MODIFICACION 1-->
+
+
+
+
+<header class="child-element">
+<div style="text-align: center; padding: 20px; background: transparent; border-radius: 10px; color: white; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);">
+<h1 style="font-size: 36px; font-weight: bold; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); font-family: 'Arial', sans-serif; margin-bottom: 10px;">
+CONFERENCIAS
+</h1>
+<p style="font-size: 18px; font-weight: 300; line-height: 1.6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);">
+Explora nuestras conferencias pagadas y gratuitas</p>
+</div>
+
+        
         <?php        
         session_start();
 
@@ -23,7 +42,7 @@
 } 
 ?>
     </header>
-    <video class="video-background" src="../fVideos/wallvideo.mp4" muted loop autoplay></video>
+    <video class="video-background" src="../fVideos/fondo4k.mp4" muted loop autoplay></video>
      <!-- <img class="image-background" src="https://blog.orvium.io/content/images/size/w2000/2023/06/alexandre-pellaes-6vAjp0pscX0-unsplash-1.jpg"> -->
 
     <!-- Filtros de búsqueda avanzada -->
