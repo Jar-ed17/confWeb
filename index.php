@@ -591,10 +591,6 @@ $result = $conn->query($sql);
 
 
 
-
-
-
-
     <footer id="contacto">
         <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.comm</p>
     </footer>
