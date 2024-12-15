@@ -41,9 +41,18 @@ if (($_SESSION )) {
             </span>
         </div>
         <div class="ctn-text">
+        <?php 
+         $query = "SELECT dato FROM datos ORDER BY RAND() LIMIT 1"; $result = $link->query($query); 
+         
+        if ($result->num_rows > 0) { 
+        $row = $result->fetch_assoc(); $dato = $row['dato'];
+        } else { 
+            $dato = "No se encontraron datos."; 
+            } 
+            $link->close(); ?>
             <div class="capa"></div>
             <h1 class="title-description">Inicia sesion en Quick Conference</h1>
-            <p class="text-description">Esto es un ejemplo ya que nose que poner en esto</p>
+            <p class="text-description"><?PHP echo $row['dato']; ?></p>
             
         </div>
     </div>
