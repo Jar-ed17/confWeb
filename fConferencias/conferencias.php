@@ -11,7 +11,7 @@
 <body>
     
     <div class="content-wrapper">
-    <div><a href="index.php" style="color: white;text-decoration:none; text-align: left;    color: #fff;text-transform: uppercase;cursor: pointer;text-decoration: none;">Quick Conferences</a></div>
+    <div><a href="/confWeb/index.php" style="color: white;text-decoration:none; text-align: left;    color: #fff;text-transform: uppercase;cursor: pointer;text-decoration: none;">Quick Conferences</a></div>
     <header class="child-element">
         <h1>Conferencias en Quick Conferences</h1>
         <p>Explora nuestras conferencias pagadas y gratuitas</p>
