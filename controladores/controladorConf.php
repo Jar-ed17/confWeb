@@ -34,8 +34,7 @@ if(!empty($_POST['btn-registrar'])){
 
 <script> window.history.replaceState(null,null, window.location.pathname) </script>
 
-<?php    
-}
+<?php    }?>
 // Obtener datos del formulario
 // $usuario = $_POST['usuario'];
 // $id = $_POST['id'];
@@ -66,8 +65,5 @@ if(!empty($_POST['btn-registrar'])){
 // }
 
 // $link->close();
-?>
-
-
 </body>
 </html>
