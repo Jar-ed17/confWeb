@@ -6,6 +6,8 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +19,21 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="cssperfil.css">
     <link rel="stylesheet" href="../fconferencias/styles2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+        function irAPagina() {
+            window.location.href = "/confWeb/index2.php"; // Cambia esto por el nombre de tu archivo
+        }
+    </script>
     <?php require "../db/conexion.php";
     // para que no duplique las publiaciones
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");?>
+
 </head>
 
 <body>
+
 <section class="perfil-usuario">
 <?php
             if (isset($_SESSION['usuario'])) {
@@ -71,33 +80,10 @@ if (!isset($_SESSION['usuario'])) {
                 </ul>
             </div>
             <div class="opcciones-perfil">
-                <!-- Button trigger modal -->
-                <button type="button" data-bs-toggle="modal" data-bs-target="#Modal-edit-perf">Editar Perfil <i class="fas fa-wrench"></i></button>
-                <!-- Modal -->
-                    <div class="modal fade" id="Modal-edit-perf" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizacion de datos</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="../controladores/controladorper.php" method="post">
-                            <?php //require '../controladores/controladorper.php'; ?>
-                            <input type="hidden" name="id" value="<?php echo $row['id'] ;?>">
-                            <input type="hidden" name="usuario" value="<?php echo $row['usuario'] ;?>">
-                            <div class="form-floating">
-                                <textarea class="form-control" name="descripcion" placeholder="" id="floatingTextarea2" style="height: 100px"><?php echo $row['descrip_perfil'] ;?></textarea>
-                            </div><br> 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <input type="submit" value="Actualizar" name="btn-actualizar-perfil" class="btn btn-primary btn btn-success">
-                        </div>
-                        </form>
-                        </div>
-                    </div>
-                    </div>
+                <button type="button" onclick="irAPagina()">Regresar</button>  
+                <button type="">Editar descripción <i class="fas fa-wrench"></i></button>
+                
+
                 <?php } } } } ?> 
                 <button type="button"  data-bs-toggle="modal" data-bs-target="#ModalAgregar">Agregar conferencia</button>
                 <?php
