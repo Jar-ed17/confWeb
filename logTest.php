@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-include ('db/conexion.php');
+// include ('db/conexion.php');
 // inicializacion del usuario
 // session_start();
 // // verificacion si ha iniciado sesion
@@ -108,7 +108,7 @@ if (isset($_SESSION['usuario'])) {
     echo "No hay usuario logueado.";
 }
 ?>
-
+<!-- OROOOOooooooooooooooooooooooooooooooooooooo -->
 <h1>consulta para obtener id,usuario,imgUser y descrip_perfil</h1>
 <?php
 if (isset($_SESSION['usuario'])) {

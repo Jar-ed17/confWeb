@@ -73,8 +73,83 @@ if (!isset($_SESSION['usuario'])) {
             </div>
             <div class="opcciones-perfil">
                 <button type="">Editar descripción <i class="fas fa-wrench"></i></button>
-                <button type="">Agregar conferencia</button>
                 <?php } } } } ?> 
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#ModalAgregar">Agregar conferencia</button>
+                <?php
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+    //echo "Usuario logueado: " . $usuario."<br>";
+
+    // Obtener el ID del usuario desde la base de datos
+    $sql = "SELECT id FROM usuariosreg WHERE usuario = '$usuario'";
+    $result = $link->query($sql);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        $user_id = $user['id'];
+        // echo id
+        echo "id ".$user_id."<br>";
+
+        // $sql = "SELECT id, usuario, imgUser, descrip_perfil  FROM usuariosreg WHERE id=$user_id";
+        $sql = "SELECT usuariosreg.id, usuariosreg.usuario, usuariosreg.descrip_perfil, usuariosreg.imgUser, COUNT(conferencias.id_conf) AS numero_conferencias
+                        FROM usuariosreg
+                        LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
+                        WHERE usuariosreg.id = $user_id
+                        GROUP BY usuariosreg.usuario, usuariosreg.descrip_perfil;";
+        $result = $link->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) { ?>
+
+                            <!-- Modal -->
+                <div class="modal fade" id="ModalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de nueva conferencia</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <?php include'../controladores/controladorConf.php'; ?>
+                        
+                                <input class="form-control" type="hidden" name="id" value="<?php echo $row['id']; ?>" placeholder="Usuario"><br>
+                                <input class="form-control" type="text" name="nombre_conf" placeholder="Nombre de la conferencia"><br>
+                                <div class="form-floating">
+                                    <select class="form-select" name="categoria" aria-label="Floating label select example">
+                                        <!-- <option selected="selected">Elije una catetoria</opt> -->
+                                        <option>Tecnología e Innovación</option>
+                                        <option>Salud y Bienestar</option>
+                                        <option>Educación y Aprendizaje</option>
+                                        <option>Negocios y Emprendimiento</option>
+                                        <option>Ciencia y Medio Ambiente</option>
+                                        <option>Arte y Cultura</option>
+                                        <option>Desarrollo Personal</option>
+                                        <option>Política y Sociedad</option>
+                                    </select><br>
+                                    <label for="floatingSelect">Elije una categoria</label>
+                                </div>
+                                <input class="form-control" type="text" name="precio"placeholder="Precio"><br>
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="brev_descrip" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Descripcion breve de la conferencia</label>
+                                </div><br>                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <input type="submit" value="Registrar" name="btn-registrar" class="btn btn-primary btn btn-success">
+                        
+                    </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+
+<?php    }
+    }
+ }
+
+}
+?>
             </div>
         </div>
         <div class="menu-perfil">
@@ -154,7 +229,6 @@ if (isset($_SESSION['usuario'])) {
         <a target="_blank" href="https://www.youtube.com><i class="fab fa-youtube"></i></a>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
