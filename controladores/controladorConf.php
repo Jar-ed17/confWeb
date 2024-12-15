@@ -7,15 +7,6 @@
 </head>
 <body>
 <?php
-        // session_start();
-
-        // if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-        //     header("location: index.php");
-        //     exit;
-        // }
-
-
-
 // require "../db/conexion.php";
 // Obtener datos del formulario
 
@@ -34,11 +25,11 @@ if(!empty($_POST['btn-registrar'])){
         if ($sql==true) {
             echo"<div class='alert alert-success'>Productos agregados correctamente</div>";
         } else {
-            echo"<div class='alert alert-danger'>Error al midificar</div>";
+            echo"<div class='alert alert-danger'>Error al Ingresar la conferencia</div>";
         }
     
     }else{
-        echo"<div class='alert alert-danger'>Faltan datos por modificar</div>";
+        echo"<div class='alert alert-danger'>Asegúrate de ingresar todos los campos</div>";
     }?>
 
 <script> window.history.replaceState(null,null, window.location.pathname) </script>
