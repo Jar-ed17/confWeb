@@ -78,7 +78,6 @@ if (!isset($_SESSION['usuario'])) {
                 <?php
 if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION['usuario'];
-    //echo "Usuario logueado: " . $usuario."<br>";
 
     // Obtener el ID del usuario desde la base de datos
     $sql = "SELECT id FROM usuariosreg WHERE usuario = '$usuario'";
@@ -87,10 +86,8 @@ if (isset($_SESSION['usuario'])) {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         $user_id = $user['id'];
-        // echo id
         echo "id ".$user_id."<br>";
 
-        // $sql = "SELECT id, usuario, imgUser, descrip_perfil  FROM usuariosreg WHERE id=$user_id";
         $sql = "SELECT usuariosreg.id, usuariosreg.usuario, usuariosreg.descrip_perfil, usuariosreg.imgUser, COUNT(conferencias.id_conf) AS numero_conferencias
                         FROM usuariosreg
                         LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
@@ -99,7 +96,6 @@ if (isset($_SESSION['usuario'])) {
         $result = $link->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) { ?>
-
                             <!-- Modal -->
                 <div class="modal fade" id="ModalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -110,9 +106,9 @@ if (isset($_SESSION['usuario'])) {
                     </div>
                     <div class="modal-body">
                         <form action="" method="POST" enctype="multipart/form-data">
-                            <?php include'../controladores/controladorConf.php'; ?>
+                            <?php include '../controladores/controladorConf.php'; ?>
                         
-                                <input class="form-control" type="hidden" name="id" value="<?php echo $row['id']; ?>" placeholder="Usuario"><br>
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>"><br>
                                 <input class="form-control" type="text" name="nombre_conf" placeholder="Nombre de la conferencia"><br>
                                 <div class="form-floating">
                                     <select class="form-select" name="categoria" aria-label="Floating label select example">
@@ -154,7 +150,7 @@ if (isset($_SESSION['usuario'])) {
         </div>
         <div class="menu-perfil">
             <ul>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i> Publicaciones</a></li>
+                <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i>Mis Publicaciones</a></li>
                 <!-- <li><a href="#" title=""><i class="icono-perfil fas fa-info-circle"></i> Informacion</a></li>
                 <li><a href="#" title=""><i class="icono-perfil fas fa-grin"></i> Amigos 43</a></li>
                 <li><a href="#" title=""><i class="icono-perfil fas fa-camera"></i> Fotos</a></li> -->
@@ -179,7 +175,7 @@ if (isset($_SESSION['usuario'])) {
         $user_id = $user['id'];
 
         // Obtener los datos de las conferencias del usuario
-        $sql = "SELECT usuariosreg.usuario, conferencias.nombre_conf, conferencias.precio, conferencias.descrip, conferencias.brev_descrip
+        $sql = "SELECT usuariosreg.usuario, conferencias.nombre_conf, conferencias.precio, conferencias.descrip, conferencias.id_conf, conferencias.brev_descrip
                 FROM usuariosreg
                 JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
                 WHERE usuariosreg.id = '$user_id'";
@@ -190,7 +186,7 @@ if (isset($_SESSION['usuario'])) {
             <div class="container" data-tema="Emocional" data-nivel="Intermedio" data-modalidad="gratuito" data-duracion="corta">
                 <div class="images-and-sizes">
                     <img alt="" src="https://www.ebankingnews.com/wp-content/uploads/2024/02/1706792232-padre-rico-padre-pobre-bitcoin-1-95xO42-696x392-1.png">
-                    <p class="pick">Xin Xao</p>
+                    <p class="pick"><?php echo $row['usuario'];  ?></p>
                 </div>
                 <div class="producto">
                     <p>Conferencia</p>
@@ -201,7 +197,32 @@ if (isset($_SESSION['usuario'])) {
                         <!-- Ver que hacer con ver detalles
                         Ver que hacer con ver detalles -->
                         <a href="detalles.html?id=2" class="add">Ver Detalles</a>
-                        <button class="like"><span>♥️</span></button>
+                        <!-- <button class="like"><span></span></button> -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalEliminar<?php echo $row['id_conf']; ?>">Eliminar</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="ModalEliminar<?php echo $row['id_conf']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="../controladores/controller-delete-conf.php" method="post">
+                                <?php //include '../controladores/controller-delete-conf.php'; ?>
+                                    <h1>¿Seguro que quiere eliminar la conferencia?</h1>
+                                    <h1>Esta acción no se podrá deshacer</h1>
+                                    <input name="id-delete-conf" type="hidden" value="<?php echo $row['id_conf']; ?>">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" id="btn-delete-conf" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- final del modal -->
                     </div>
                 </div>
             </div>
@@ -217,7 +238,7 @@ if (isset($_SESSION['usuario'])) {
     echo "No hay usuario logueado.";
 }
 ?>
-        </div>
+</div>
 
 
 <div class="mis-redes" style="display: block;position: fixed;bottom: 1rem;left: 1rem; opacity: 0.5; z-index: 1000;">
@@ -229,6 +250,7 @@ if (isset($_SESSION['usuario'])) {
         <a target="_blank" href="https://www.youtube.com><i class="fab fa-youtube"></i></a>
     </div>
 </div>
+<script> window.history.replaceState(null,null, window.location.pathname) </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

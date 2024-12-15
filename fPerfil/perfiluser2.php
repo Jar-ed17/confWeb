@@ -71,7 +71,7 @@ if (!isset($_SESSION['usuario'])) {
             <div class="opcciones-perfil">
                 
                 <!-- Button trigger modal -->
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar Descripcion</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar Descripcion</button>    
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">

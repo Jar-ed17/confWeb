@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick conference</title>
-    <!-- <meta http-equiv="Refresh" content="0; url='../fPerfil/perfiluser.php" /> -->
 </head>
 <body>
 <?php
@@ -33,7 +32,7 @@ if(!empty($_POST['btn-registrar'])){
         VALUES ('$id_userFK', '$nombre_conf', '$categoria', '$precio', '$brev_descrip')") ;
 
         if ($sql==true) {
-            echo"<div class='alert alert-success'>Productos modificados correctamente</div>";
+            echo"<div class='alert alert-success'>Productos agregados correctamente</div>";
         } else {
             echo"<div class='alert alert-danger'>Error al midificar</div>";
         }
