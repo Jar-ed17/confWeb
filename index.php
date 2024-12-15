@@ -38,10 +38,63 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <header class="">
+    <!--<header class="">
         <h1 class="fuente2">Quick Conferences</h1>
         <p class="fuente-personalizada">Servicios de conferencias, pláticas y capacitaciones a tu medida</p>
-    </header>
+    </header>-->
+    <header class="header">
+    <h1 class="fuente2">Quick Conferences</h1>
+    <p class="fuente-personalizada">Servicios de conferencias, pláticas y capacitaciones a tu medida</p>
+</header>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        background: linear-gradient(135deg,rgb(142, 107, 36),rgb(203, 132, 61));
+        text-align: center;
+        padding: 80px 20px;
+        color: #fff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solidrgb(31, 25, 17);
+    }
+
+    .fuente2 {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .fuente-personalizada {
+        font-size: 18px;
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.8;
+        letter-spacing: 0.5px;
+    }
+
+    .fuente2:hover {
+        color: #ff9900;
+        text-shadow: 2px 2px 10px rgba(255, 153, 0, 0.5);
+    }
+
+    .fuente-personalizada:hover {
+        opacity: 1;
+    }
+</style>
+
 
     <div class="galery">
         <div style="background-image: url(https://marketing4ecommerce.net/wp-content/uploads/2019/09/nueva-portada-enero-16.jpg);"></div>
@@ -54,49 +107,333 @@ $result = $conn->query($sql);
 
 
 
+    <!--<nav>
+        <a href="#servicios">CONFERENCIAS</a>
+        <a href="fLoginp/loginpage.php">PERFIL</a>
+        <a href="fregister/registerpage.php">REGISTRO</a>
+        <a href="fLoginp/loginpage.php">INICIAR SESION</a>
+    </nav>-->
     <nav>
-        <a href="fConferencias/conferencias.php">Conferencias</a>
-        <a href="fLoginp/loginpage.php">Perfil</a>
-        <a href="fregister/registerpage.php">Registro</a>
-        <a href="fLoginp/loginpage.php">Iniciar Sesion</a>
-    </nav>
+    <ul class="navbar">
+        <li><a href="#servicios" class="nav-link">CONFERENCIAS</a></li>
+        <li><a href="fLoginp/loginpage.php" class="nav-link">PERFIL</a></li>
+        <li><a href="fregister/registerpage.php" class="nav-link">REGISTRO</a></li>
+        <li><a href="fLoginp/loginpage.php" class="nav-link">INICIAR SESION</a></li>
+    </ul>
+</nav>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color:rgb(252, 247, 247);
+    }
+
+    nav {
+        background-color:rgb(33, 30, 26);
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(155, 150, 15, 0.72);
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .navbar li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+        padding: 10px 0;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-link:hover {
+        color: #ff9900;
+        transform: translateY(-2px);
+    }
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #ff9900;
+        transition: width 0.3s, left 0.3s;
+    }
+
+    .nav-link:hover::before {
+        width: 100%;
+        left: 0;
+    }
+</style>
 
 
 
-    <section class="banner">
+
+
+   <!-- <section class="banner">
         <h2>Hacemos de cada conferencia una experiencia única</h2>
         <p>Explora nuestros servicios y elige el que mejor se adapte a tu evento</p>
-    </section>
+    </section>-->
 
-    <section id="conferencias" class="content">
-        <h2>Conferencias Disponibles</h2>
-        <div class="conferencias-list">
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "
-                    <div class='conferencia-item' style='border: 1px solid #ccc; margin: 10px; padding: 15px; border-radius: 10px; background: #f9f9f9;'>
-                        <h3 style='color: #1e3c72;'>{$row['nombre_conf']}</h3>
-                        <p><strong>Categoría:</strong> {$row['categoria']}</p>
-                        <p><strong>Precio:</strong> $ {$row['precio']}</p>
-                        <p><strong>Descripción:</strong> {$row['brev_descrip']}</p>
-                        <button class='boton' style='margin-top: 10px; padding: 10px 15px; background: #1e3c72; color: white; border: none; border-radius: 5px; cursor: pointer;'
-                        onclick=\"alert('¡Gracias por tu interés en {$row['nombre_conf']}!')\">Más Información</button>
-                    </div>";
-                }
-            } else {
-                echo "<p>No hay conferencias disponibles en este momento.</p>";
+    <section id="servicios"class="banner" style="position: relative; padding: 100px 20px; text-align: center; color: white; overflow: hidden; background: transparent; border-radius: 20px; border: 5px solidrgb(138, 27, 8);">
+    <!-- Fondo animado con partículas -->
+    <div class="particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; background: url('https://cdn.pixabay.com/photo/2021/06/30/06/26/abstract-6374434_960_720.png') no-repeat center center / cover; opacity: 0.3; animation: fadeMove 15s infinite alternate;"></div>
+    
+    <h2 style="z-index: 2; font-size: 3em; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; animation: popIn 1.5s ease-out;">Hacemos de cada conferencia una experiencia única</h2>
+    <p style="z-index: 2; font-size: 1.5em; margin-bottom: 30px; animation: fadeInUp 1.5s ease-out;">Explora nuestros servicios y elige el que mejor se adapte a tu evento</p>
+    <a href="fConferencias/conferencias.php" style="z-index: 2; display: inline-block; padding: 15px 30px; font-size: 1.2em; font-weight: bold; color:rgb(128, 24, 6); background-color: transparent; border-radius: 30px; border: 2px solidrgb(141, 35, 16); text-decoration: none; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); transition: all 0.3s ease-in-out; animation: slideInUp 2s ease-out;" >Explorar Servicios</a>
+</section>
+
+<!-- Animaciones -->
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeMove {
+    0% {
+        opacity: 0.2;
+        transform: translate(-50px, -50px);
+    }
+    100% {
+        opacity: 0.4;
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 5px solid rgb(114, 27, 12);
+}
+
+.banner h2,
+.banner p,
+.banner a {
+    position: relative;
+    z-index: 2;
+    color:black;
+}
+</style>
+
+
+
+<section id="conferencias" class="content">
+    <h2 class="section-title">Conferencias Disponibles</h2>
+    <div class="conferencias-list">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "
+                <div class='conferencia-item'>
+                    <div class='conferencia-header'>
+                        <h3 class='conferencia-title'>{$row['nombre_conf']}</h3>
+                    </div>
+                    <div class='conferencia-body'>
+                        <p><span class='label'>Categoría:</span> {$row['categoria']}</p>
+                        <p><span class='label'>Precio:</span> $ {$row['precio']}</p>
+                        <p><span class='label'>Descripción:</span> {$row['brev_descrip']}</p>
+                    </div>
+                    <div class='conferencia-footer'>
+                        <button class='boton' onclick=\"alert('¡Gracias por tu interés en {$row['nombre_conf']}!')\">Más Información</button>
+                    </div>
+                </div>";
             }
-            $conn->close();
-            ?>
-        </div>
-    </section>
+        } else {
+            echo "<p class='no-conferencias'>No hay conferencias disponibles en este momento.</p>";
+        }
+        $conn->close();
+        ?>
+    </div>
+</section>
+
+<style>
+    /* General Section Styles */
+    #conferencias {
+        padding: 40px 20px;
+        background: transparent;
+        color: #333;
+        font-family: 'Georgia', serif;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    /* Conference List Styles */
+    .conferencias-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    /* Conference Item Styles */
+    .conferencia-item {
+        background: rgba(255, 255, 255, 0.8);
+        color: #333;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #ccc;
+    }
+
+    .conferencia-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .conferencia-header {
+        background: rgba(33, 37, 41, 0.9);
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .conferencia-title {
+        font-size: 1.5rem;
+        margin: 0;
+        font-style: italic;
+    }
+
+    .conferencia-body {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .conferencia-footer {
+        padding: 15px;
+        text-align: center;
+        background: rgba(245, 245, 245, 0.8);
+    }
+
+    .boton {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-family: 'Georgia', serif;
+    }
+
+    .boton:hover {
+        background: #555;
+    }
+
+    .no-conferencias {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        font-style: italic;
+        color: #555;
+    }
+</style>
+
+
+<section class="about-container">
+    <!-- Title -->
+    <div class="about-title">
+        <img src="https://img.icons8.com/ios/50/000000/leaf.png" alt="Leaf Icon">
+        <h1>About Us</h1>
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of g it.</p>
+    </div>
+
+    <!-- Read More Button -->
+    <a href="#" class="read-more">Read More</a>
+
+    <!-- Background Image -->
+    <div class="about-background">
+        <img src="https://www.transparenttextures.com/patterns/flowers.png" alt="Background Flowers">
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     
 
-    <section id="testimonios" class="content">
+    <!--<section id="testimonios" class="content">
         <h2>Testimonios</h2>
         <div class="testimonial">
             <p><strong>Juan Pérez:</strong> "Las conferencias de Quick Conferences nos ayudaron a mejorar el ambiente laboral y la comunicación en el equipo. ¡Muy recomendados!"</p>
@@ -105,7 +442,24 @@ $result = $conn->query($sql);
             <p><strong>Ana López:</strong> "Excelente capacitación, clara y muy práctica. Aprendimos nuevas herramientas que ya estamos implementando en nuestro día a día."</p>
             <br>
         </div>
-    </section>
+    </section>-->
+
+
+
+    <section id="testimonios" class="content" style="padding: 40px 20px; border-radius: 10px;">
+    <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; margin-bottom: 20px; color: #1e3c72;">Testimonios</h2>
+    <div class="testimonials-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div class="testimonial" style="background: transparent; border: 2px solid #1e3c72; padding: 20px; border-radius: 15px; max-width: 350px; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <p style="font-size: 1.2em; line-height: 1.5; font-style: italic;">"Las conferencias de Quick Conferences nos ayudaron a mejorar el ambiente laboral y la comunicación en el equipo. ¡Muy recomendados!"</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #1e3c72;">- Juan Pérez</p>
+        </div>
+        <div class="testimonial" style="background: transparent; border: 2px solid #1e3c72; padding: 20px; border-radius: 15px; max-width: 350px; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <p style="font-size: 1.2em; line-height: 1.5; font-style: italic;">"Excelente capacitación, clara y muy práctica. Aprendimos nuevas herramientas que ya estamos implementando en nuestro día a día."</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #1e3c72;">- Ana López</p>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -119,4 +473,3 @@ $result = $conn->query($sql);
     
 </body>
 </html>
-
