@@ -391,39 +391,168 @@ $result = $conn->query($sql);
 </style>
 
 
-<section class="about-container">
-    <!-- Title -->
-    <div class="about-title">
-        <img src="https://img.icons8.com/ios/50/000000/leaf.png" alt="Leaf Icon">
-        <h1>About Us</h1>
-    </div>
+<section class="about_section layout_padding">
+  <style>
+    /* Estilo general para la sección */
+    .about_section {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 50px 0; /* Ajusta el espaciado interno */
+      color: #fff; /* Color del texto */
+      background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240611/pngtree-conference-room-with-wooden-walls-and-microphones-at-each-seat-image_15747057.jpg'); /* Ruta de tu imagen */
+      background-size: cover; /* Asegura que la imagen se vea completa */
+      background-position: center; /* Centra la imagen */
+      background-repeat: no-repeat; /* Evita repeticiones */
+      background-color: #000; /* Fondo de respaldo si la imagen no carga */
+    }
 
-    <!-- Text -->
-    <div class="about-text">
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of g it.</p>
-    </div>
+    /* Fondo semi-transparente adicional para mejorar visibilidad */
+    .about_section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Oscurecimiento transparente */
+      z-index: 0;
+    }
 
-    <!-- Read More Button -->
-    <a href="#" class="read-more">Read More</a>
+    /* Contenido en primer plano */
+    .about_container {
+      position: relative;
+      z-index: 1;
+      text-align: center; /* Alinea el contenido centrado */
+    }
 
-    <!-- Background Image -->
-    <div class="about-background">
-        <img src="https://www.transparenttextures.com/patterns/flowers.png" alt="Background Flowers">
+    /* Ajustar contenedor */
+    .about_container .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Títulos y texto */
+    .custom_heading {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about_section p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgb(247, 245, 241);
+    }
+
+    /* Botón estilizado */
+    .about_section a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background:rgb(104, 73, 11);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .about_section a:hover {
+      background:rgb(232, 220, 218);
+    }
+    .about_container .container{
+        background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con 80% de opacidad */
+    }
+  </style>
+
+  <div class="about_container">
+    <div class="container">
+      <div class="detail">
+        <h2 class="custom_heading">
+          Acerca de Nosotros
+        </h2>
+        <p>
+          En Quick Conferences, creemos en el poder de las ideas y 
+          el conocimiento para transformar a las personas y organizaciones.
+        </p>
+        <div>
+          <a href="">
+            Registrate
+          </a>
+        </div>
+      </div>
+      <div class="detail-2">
+        <p>
+          Nuestro compromiso es conectar a 
+          expertos en diversas áreas con quienes buscan crecer personal y profesionalmente. 
+        </p>
+      </div>
     </div>
+  </div>
 </section>
+                
 
 
 
 
+<!-- product section -->
+<section class="product_section layout_padding" style="margin: 0; padding: 0;">
+<div class="d-flex justify-content-center align-items-center" style="padding: 40px 0;  background-color: rgba(255, 255, 255, 0.2);  border-radius: 15px;">
+  <h2 class="custom_heading" style="text-align: center; color:rgb(23, 21, 21); font-size: 2.5rem; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); animation: fadeIn 1.5s;  ">
+    Un poco de Nosotros
+  </h2>
+</div>
 
+<style>
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 
-
-
-
-
-
-
-
+  <div class="container" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
+    <div class="product-grid" style="
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: auto; 
+      gap: 20px; 
+      width: 100%; 
+      height: 100%; 
+      margin: 0 auto;">
+      
+    
+      <!-- Imagen 1 -->
+      <div class="img-box" style="overflow: hidden;">
+        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
+             alt="" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <!-- Imagen 2 -->
+      <div class="img-box" style="overflow: hidden;">
+        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
+             alt="" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <!-- Imagen 3 -->
+      <div class="img-box" style="overflow: hidden;">
+        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
+             alt="" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <!-- Imagen 4 -->
+      <div class="img-box" style="overflow: hidden;">
+        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
+             alt="" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -447,7 +576,7 @@ $result = $conn->query($sql);
 
 
     <section id="testimonios" class="content" style="padding: 40px 20px; border-radius: 10px;">
-    <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; margin-bottom: 20px; color: #1e3c72;">Testimonios</h2>
+    <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; margin-bottom: 20px; color:rgb(7, 8, 8);">Testimonios</h2>
     <div class="testimonials-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
         <div class="testimonial" style="background: transparent; border: 2px solid #1e3c72; padding: 20px; border-radius: 15px; max-width: 350px; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
             <p style="font-size: 1.2em; line-height: 1.5; font-style: italic;">"Las conferencias de Quick Conferences nos ayudaron a mejorar el ambiente laboral y la comunicación en el equipo. ¡Muy recomendados!"</p>
