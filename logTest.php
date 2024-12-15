@@ -79,21 +79,69 @@ if (isset($_SESSION['usuario'])) {
         $result = $link->query($sql);
 
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "Usuario: " . $row['usuario'] . "<br>";
-                echo "Nombre de la conferencia: " . $row['nombre_conf'] . "<br>";
-                echo "Precio: " . $row['precio'] . "<br>";
-                echo "Descripción: " . $row['descrip'] . "<br>";
-                echo "Breve Descripción: " . $row['brev_descrip'] . "<br><br>";
-            }
+            while ($row = $result->fetch_assoc()) {?>
+            <table border="2">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Nombre conferencia</th>
+                    <th>Precio</th>
+                    <th>Descripcion</th>
+                    <th>breveDescripcion</th>
+                </tr>
+                <tr>
+                    <td><?php echo $row['usuario'];?></td>
+                    <td><?php echo $row['nombre_conf'];?></td>
+                    <td><?php echo $row['precio'];?></td>
+                    <td><?php echo $row['descrip'];?></td>
+                    <td><?php echo $row['brev_descrip'];?></td>
+                </tr><br>
+            </table>
+           <?php }
         } else {
             echo "No se encontraron conferencias para este usuario.";
         }
-    } else {
+    } 
+    else {
         echo "Usuario no encontrado en la base de datos.";
     }
 } else {
     echo "No hay usuario logueado.";
+}
+?>
+
+<h1>consulta para obtener id,usuario,imgUser y descrip_perfil</h1>
+<?php
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+    //echo "Usuario logueado: " . $usuario."<br>";
+
+    // Obtener el ID del usuario desde la base de datos
+    $sql = "SELECT id FROM usuariosreg WHERE usuario = '$usuario'";
+    $result = $link->query($sql);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        $user_id = $user['id'];
+        // echo id
+        echo "id ".$user_id."<br>";
+
+        // $sql = "SELECT id, usuario, imgUser, descrip_perfil  FROM usuariosreg WHERE id=$user_id";
+        $sql = "SELECT usuariosreg.id, usuariosreg.usuario, usuariosreg.descrip_perfil, usuariosreg.imgUser, COUNT(conferencias.id_conf) AS numero_conferencias
+                        FROM usuariosreg
+                        LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
+                        WHERE usuariosreg.id = $user_id
+                        GROUP BY usuariosreg.usuario, usuariosreg.descrip_perfil;";
+        $result = $link->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) { ?>
+            <?php echo $row['usuario']."<br>";
+            echo $row['imgUser']."<br>";
+            echo $row['descrip_perfil']."<br>"; 
+            echo $row['numero_conferencias'];?>
+        <?php    }
+    }
+ }
+
 }
 ?>
 

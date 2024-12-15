@@ -1,5 +1,11 @@
 <?php 
     // require "../controladores/code-login.php" 
+    session_start();
+
+if (($_SESSION )) {
+    header('Location: ../index2.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

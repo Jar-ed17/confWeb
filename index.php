@@ -6,6 +6,13 @@
         //     header("location: index2.php");
         //     exit;
 // }
+
+session_start();
+
+if (($_SESSION )) {
+    header('Location: index2.php');
+    exit();
+}
         
 ?>
 

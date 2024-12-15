@@ -1,7 +1,12 @@
 <?php 
 
         include("../controladores/code-register.php");
+        session_start();
 
+        if (($_SESSION )) {
+        header('Location: ../index2.php');
+        exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
