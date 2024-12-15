@@ -11,30 +11,59 @@
 </head>
 <body>
 <?php
-require_once "../db/conexion.php";
+require "../db/conexion.php";
+if(!empty($_POST['btn-actualizar-perfil'])){
+    $id = $_POST['id'];
+    $usuario = $_POST['usuario'];
+    $descripcion = $_POST['descripcion'];
 
-$descrip_perfil = $_POST['descrip_perfil'];
+    if(!empty($usuario) && !empty($descripcion)){
+        $sql = $link->query("UPDATE usuariosreg SET usuario='$usuario', descrip_perfil='$descripcion' WHERE id=$id") ;
+        if ($sql==true) {
+           // echo"<div class='alert alert-success'>Perfil actualizado correctamente</div>";
+        } else {
+            //echo"<div class='alert alert-danger'>Error al modificar</div>";
+        }
+    
+    }else{
+        //echo"<div class='alert alert-danger'>Faltan datos por modificar</div>";
+    }?>
 
-$sql = "SELECT id FROM usuariosreg WHERE id='1'";
-$result = $link->query($sql);
+<script> window.history.replaceState(null,null, window.location.pathname) </script>
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $id_userFK = $row['id'];
-
-    // Insertar datos en la tabla conferencias
-    $sql = "UPDATE usuariosreg SET descrip_perfil = '$descrip_perfil' WHERE id = 1;";
-
-    if ($link->query($sql) === TRUE) {
-        echo "Nueva conferencia insertada correctamente";
-    } else {
-        echo "Error: " . $sql . "<br>" . $link->error;
-    }
-} else {
-    echo "Algo ha salido mal";
+<?php    
 }
+// require_once "../db/conexion.php";
 
-$link->close();
+// $descrip_perfil = $_POST['descrip_perfil'];
+
+
+// $sql = "SELECT id FROM usuariosreg WHERE id='1'";
+// $result = $link->query($sql);
+
+// if ($result->num_rows > 0) {
+//     $row = $result->fetch_assoc();
+//     $id_userFK = $row['id'];
+
+//     // Insertar datos en la tabla conferencias
+//     $sql = "UPDATE usuariosreg SET descrip_perfil = '$descrip_perfil' WHERE id = 1;";
+
+//     if ($link->query($sql) === TRUE) {
+//         echo "Nueva conferencia insertada correctamente";
+//     } else {
+//         echo "Error: " . $sql . "<br>" . $link->error;
+//     }
+// } else {
+//     echo "Algo ha salido mal";
+// }
+
+// $link->close();
 ?>
+
+
+
+
+
+
 </body>
 </html>

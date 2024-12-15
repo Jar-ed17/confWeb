@@ -71,7 +71,33 @@ if (!isset($_SESSION['usuario'])) {
                 </ul>
             </div>
             <div class="opcciones-perfil">
-                <button type="">Editar descripción <i class="fas fa-wrench"></i></button>
+                <!-- Button trigger modal -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#Modal-edit-perf">Editar Perfil <i class="fas fa-wrench"></i></button>
+                <!-- Modal -->
+                    <div class="modal fade" id="Modal-edit-perf" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizacion de datos</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="../controladores/controladorper.php" method="post">
+                            <?php //require '../controladores/controladorper.php'; ?>
+                            <input type="hidden" name="id" value="<?php echo $row['id'] ;?>">
+                            <input type="hidden" name="usuario" value="<?php echo $row['usuario'] ;?>">
+                            <div class="form-floating">
+                                <textarea class="form-control" name="descripcion" placeholder="" id="floatingTextarea2" style="height: 100px"><?php echo $row['descrip_perfil'] ;?></textarea>
+                            </div><br> 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <input type="submit" value="Actualizar" name="btn-actualizar-perfil" class="btn btn-primary btn btn-success">
+                        </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
                 <?php } } } } ?> 
                 <button type="button"  data-bs-toggle="modal" data-bs-target="#ModalAgregar">Agregar conferencia</button>
                 <?php
