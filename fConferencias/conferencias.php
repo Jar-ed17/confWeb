@@ -16,7 +16,7 @@
 <a href="/confWeb/index.php" style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: transform 0.3s, color 0.3s;"
 onmouseover="this.style.color='#ffcc00'; this.style.transform='scale(1.1)';"
 onmouseout="this.style.color='white'; this.style.transform='scale(1)';">
-Pagina Principal
+Quick Conferences
   </a>
 </div>
  <!--Modificaciones para implementar en el archivo principal MODIFICACION 1-->
