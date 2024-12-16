@@ -34,6 +34,46 @@ $result = $conn->query($sql);
     <title>Quick Conferences - Servicios de Conferencias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Contenedor principal */
+    .container {
+      width: 100%;
+      max-width: 1200px; /* Opcional: ancho máximo */
+      margin: 0 auto; /* Centrado horizontal */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Diseño de la cuadrícula */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      grid-template-rows: repeat(2, 1fr); /* 2 filas */
+      gap: 10px; /* Espacio entre imágenes */
+    }
+
+    /* Contenedor de cada imagen */
+    .img-box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Evita desbordamiento */
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ajusta imagen sin deformarla */
+      display: block;
+    }
+
+    /* Diseño responsive para pantallas pequeñas */
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        grid-template-rows: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -510,44 +550,28 @@ $result = $conn->query($sql);
 }
 </style>
 
-  <div class="container" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-    <div class="product-grid" style="
-      display: grid; 
-      grid-template-columns: repeat(2, 1fr); 
-      grid-template-rows: auto; 
-      gap: 20px; 
-      width: 100%; 
-      height: 100%; 
-      margin: 0 auto;">
-      
-    
+ <!-- Contenedor principal -->
+ <div class="container">
+    <div class="product-grid">
       <!-- Imagen 1 -->
-      <div class="img-box" style="overflow: hidden;">
-        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
-             alt="" 
-             style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="img-box">
+        <img src="/confweb/fotoPerfil/imagen1.png" alt="Imagen 1">
       </div>
       <!-- Imagen 2 -->
-      <div class="img-box" style="overflow: hidden;">
-        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
-             alt="" 
-             style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="img-box">
+        <img src="/confweb/fotoPerfil/imagen2.png" alt="Imagen 2">
       </div>
       <!-- Imagen 3 -->
-      <div class="img-box" style="overflow: hidden;">
-        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
-             alt="" 
-             style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="img-box">
+        <img src="/confweb/fotoPerfil/imagen3.png" alt="Imagen 3">
       </div>
       <!-- Imagen 4 -->
-      <div class="img-box" style="overflow: hidden;">
-        <img src="https://icom.museum/wp-content/uploads/2024/07/FW9B3170.jpg" 
-             alt="" 
-             style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="img-box">
+        <img src="/confweb/fotoPerfil/imagen4.png" alt="Imagen 4">
       </div>
     </div>
   </div>
-</section>
+
 
 
 
