@@ -5,11 +5,6 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: floginp/loginpage.php');
     exit();
 }
-include 'db/conexion.php';
-// Verificar conexión
-if ($link->connect_error) {
-    die("Error al conectar a la base de datos: " . $link->connect_error);
-}
 
 // Consulta para obtener las conferencias
 $sql = "SELECT id_conf, nombre_conf, categoria, precio, brev_descrip FROM conferencias";
@@ -145,7 +140,7 @@ $result = $link->query($sql);
     <nav>
     <ul class="navbar">
         <li><a href="#servicios" class="nav-link">CONFERENCIAS</a></li>
-        <li><a href="fperfil/perfiluser.php" class="nav-link">PERFIL</a></li>
+        <li><a href="fPerfil/perfiluser.php" class="nav-link">PERFIL</a></li>
         <li><a href="controladores/cerrar_sesion.php" class="nav-link">CERRAR SESION</a></li>
     </ul>
 </nav>
@@ -548,19 +543,19 @@ $result = $link->query($sql);
     <div class="product-grid">
       <!-- Imagen 1 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen1.png" alt="Imagen 1">
+        <img src="fVideos/imagen1.png" alt="Imagen 1">
       </div>
       <!-- Imagen 2 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen2.png" alt="Imagen 2">
+        <img src="fVideos/imagen2.png" alt="Imagen 2">
       </div>
       <!-- Imagen 3 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen3.png" alt="Imagen 3">
+        <img src="fVideos/imagen3.png" alt="Imagen 3">
       </div>
       <!-- Imagen 4 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen4.png" alt="Imagen 4">
+        <img src="fVideos/imagen4.png" alt="Imagen 4">
       </div>
     </div>
   </div>
@@ -608,7 +603,7 @@ $result = $link->query($sql);
 
 
     <footer id="contacto">
-        <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.comm</p>
+        <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.com</p>
     </footer>
 
     

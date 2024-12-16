@@ -17,11 +17,11 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="cssperfil.css">
-    <link rel="stylesheet" href="../fconferencias/styles2.css">
+    <link rel="stylesheet" href="../fConferencias/styles2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script>
         function irAPagina() {
-            window.location.href = "/confWeb/index2.php"; // Cambia esto por el nombre de tu archivo
+            window.location.href = "../index2.php"; // Cambia esto por el nombre de tu archivo
         }
     </script>
     <?php require "../db/conexion.php";
@@ -65,10 +65,10 @@ if (!isset($_SESSION['usuario'])) {
             
                 <img src="<?php echo $row['imgUser']; ?>" alt="img">
                 <!-- a href para cambiar imagen -->
-                <a href="../logTest.php" class="cambiar-foto">
+                <!-- <a href="../logTest.php" class="cambiar-foto">
                     <i class="fas fa-camera"></i> 
                      <span>Cambiar foto</span>
-                </a>
+                </a> -->
             </div>
             <div class="datos-perfil">
                 <h4 class="titulo-usuario"><?php echo $row ['usuario'];  ?></h4>

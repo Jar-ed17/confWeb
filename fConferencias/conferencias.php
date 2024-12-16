@@ -13,7 +13,7 @@
     <div class="content-wrapper">
 
 <div style="background: transparent; padding: 15px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); border-radius: 5px;">
-<a href="/confWeb/index.php" style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: transform 0.3s, color 0.3s;"
+<a href="../index.php" style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: transform 0.3s, color 0.3s;"
 onmouseover="this.style.color='#ffcc00'; this.style.transform='scale(1.1)';"
 onmouseout="this.style.color='white'; this.style.transform='scale(1)';">
 Quick Conferences

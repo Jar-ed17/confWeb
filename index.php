@@ -1,18 +1,13 @@
 <?php
-// Inicio de sesión
+
 session_start();
 
-// Redirección si ya está logueado
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: index2.php");
+session_start();
+if (($_SESSION )) {
+    header('Location: index2.php');
     exit();
 }
 include 'db/conexion.php';
-
-// Verificar conexión
-if ($link->connect_error) {
-    die("Error al conectar a la base de datos: " . $link->connect_error);
-}
 
 // Consulta para obtener las conferencias
 $sql = "SELECT id_conf, nombre_conf, categoria, precio, brev_descrip FROM conferencias";
@@ -510,7 +505,7 @@ $result = $link->query($sql);
           el conocimiento para transformar a las personas y organizaciones.
         </p>
         <div>
-          <a href="">
+          <a href="fregister/registerpage.php">
             Registrate
           </a>
         </div>
@@ -554,19 +549,19 @@ $result = $link->query($sql);
     <div class="product-grid">
       <!-- Imagen 1 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen1.png" alt="Imagen 1">
+        <img src="fVideos/imagen1.png" alt="Imagen 1">
       </div>
       <!-- Imagen 2 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen2.png" alt="Imagen 2">
+        <img src="fVideos/imagen2.png" alt="Imagen 2">
       </div>
       <!-- Imagen 3 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen3.png" alt="Imagen 3">
+        <img src="fVideos/imagen3.png" alt="Imagen 3">
       </div>
       <!-- Imagen 4 -->
       <div class="img-box">
-        <img src="/confweb/fVideos/imagen4.png" alt="Imagen 4">
+        <img src="fVideos/imagen4.png" alt="Imagen 4">
       </div>
     </div>
   </div>
@@ -609,7 +604,7 @@ $result = $link->query($sql);
 
 
     <footer id="contacto">
-        <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.comm</p>
+        <p>&copy; 2024 Quick Conferences | Contacto: info@quickconferences.com</p>
     </footer>
 
     
