@@ -5,22 +5,15 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: floginp/loginpage.php');
     exit();
 }
-// Conexión a la base de datos
-$servername = "localhost"; // Cambia según tu configuración
-$username = "root";        // Cambia según tu configuración
-$password = "";            // Cambia según tu configuración
-$dbname = "confwebp";      // Nombre de la base de datos
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+include 'db/conexion.php';
 // Verificar conexión
-if ($conn->connect_error) {
-    die("Error al conectar a la base de datos: " . $conn->connect_error);
+if ($link->connect_error) {
+    die("Error al conectar a la base de datos: " . $link->connect_error);
 }
 
 // Consulta para obtener las conferencias
 $sql = "SELECT id_conf, nombre_conf, categoria, precio, brev_descrip FROM conferencias";
-$result = $conn->query($sql);
+$result = $link->query($sql);
 ?>
 
 
@@ -325,7 +318,7 @@ $result = $conn->query($sql);
         } else {
             echo "<p class='no-conferencias'>No hay conferencias disponibles en este momento.</p>";
         }
-        $conn->close();
+        $link->close();
         ?>
     </div>
 </section>
