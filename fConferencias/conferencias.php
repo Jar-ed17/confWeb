@@ -30,7 +30,7 @@ Pagina Principal
 CONFERENCIAS
 </h1>
 <p style="font-size: 18px; font-weight: 300; line-height: 1.6; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);">
-Explora nuestras conferencias pagadas y gratuitas</p>
+Explora nuestras conferencias</p>
 </div>
 
         
@@ -84,7 +84,7 @@ Explora nuestras conferencias pagadas y gratuitas</p>
     <!-- Catálogo de conferencias -->
     
     <section class="cursos" id="catalogo">
-        <h2>CONFERENCIAS PAGADAS</h2>
+        <!-- <h2>CONFERENCIAS PAGADAS</h2> -->
         <div class="cursos-grid">
             <!-- Ejemplo de una conferencia pagada -->
                     <!-- insertando el while antes de los divs -->
@@ -125,7 +125,7 @@ Explora nuestras conferencias pagadas y gratuitas</p>
 
         </div>
 
-        <h2>CONFERENCIAS GRATUITAS</h2>
+        <!-- <h2>CONFERENCIAS GRATUITAS</h2>
         <div class="cursos-grid">
             <div class="container" data-tema="Emocional" data-nivel="Intermedio" data-modalidad="gratuito" data-duracion="corta">
                 <div class="images-and-sizes">
@@ -147,7 +147,7 @@ Explora nuestras conferencias pagadas y gratuitas</p>
             </div>
 
             <!-- Más conferencias gratuitas con diferentes valores de tema, nivel, modalidad y duración -->
-        </div>
+        </div> -->
     </section>
 
     <footer>
