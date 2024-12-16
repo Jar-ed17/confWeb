@@ -1,8 +1,6 @@
 <?php
 
 session_start();
-
-session_start();
 if (($_SESSION )) {
     header('Location: index2.php');
     exit();

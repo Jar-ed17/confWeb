@@ -5,6 +5,7 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: floginp/loginpage.php');
     exit();
 }
+include 'db/conexion.php';
 
 // Consulta para obtener las conferencias
 $sql = "SELECT id_conf, nombre_conf, categoria, precio, brev_descrip FROM conferencias";
