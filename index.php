@@ -299,22 +299,21 @@ $result = $link->query($sql);
     <div class="conferencias-list">
         <?php
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "
+            while ($row = $result->fetch_assoc()) {?>
                 <div class='conferencia-item'>
                     <div class='conferencia-header'>
-                        <h3 class='conferencia-title'>{$row['nombre_conf']}</h3>
+                        <h3 class='conferencia-title'><?php echo $row['nombre_conf']?></h3>
                     </div>
                     <div class='conferencia-body'>
-                        <p><span class='label'>Categoría:</span> {$row['categoria']}</p>
-                        <p><span class='label'>Precio:</span> $ {$row['precio']}</p>
-                        <p><span class='label'>Descripción:</span> {$row['brev_descrip']}</p>
+                        <p><span class='label'>Categoría:</span><?php echo  $row['categoria']?></p>
+                        <p><span class='label'>Precio:</span><?php echo $row['precio']?></p>
+                        <p><span class='label'>Descripción:</span> rcho <?php $row['brev_descrip']?></p>
                     </div>
                     <div class='conferencia-footer'>
-                        <button class='boton' onclick=\"alert('¡Gracias por tu interés en {$row['nombre_conf']}!')\">Más Información</button>
+                        <button class='boton' onclick="alert('¡Gracias por tu interés en <?php echo $row['nombre_conf']?>!                                                Contactar:9981458466')">Más Información</button>
                     </div>
-                </div>";
-            }
+                </div>
+            <?php   }
         } else {
             echo "<p class='no-conferencias'>No hay conferencias disponibles en este momento.</p>";
         }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-// include ('db/conexion.php');
+include ('db/conexion.php');
 // inicializacion del usuario
 // session_start();
 // // verificacion si ha iniciado sesion

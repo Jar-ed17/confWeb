@@ -45,42 +45,6 @@ Explora nuestras conferencias</p>
     <video class="video-background" src="../fVideos/fondo4k.mp4" muted loop autoplay></video>
      <!-- <img class="image-background" src="https://blog.orvium.io/content/images/size/w2000/2023/06/alexandre-pellaes-6vAjp0pscX0-unsplash-1.jpg"> -->
 
-    <!-- Filtros de búsqueda avanzada -->
-<!--      
-    <section id="filtros">
-        <label for="tema">Filtrar por Tema:</label>
-        <select id="tema">
-            <option value="todos">Todos</option>
-            <option value="Liderazgo">Liderazgo</option>
-            <option value="Digital">Digital</option>
-            <option value="Cambio">Cambio</option>
-            <option value="Creatividad">Creatividad</option>
-            <option value="Emocional">Emocional</option>
-        </select>
-
-        <label for="nivel">Filtrar por Nivel:</label>
-        <select id="nivel">
-            <option value="todos">Todos</option>
-            <option value="Principiante">Principiante</option>
-            <option value="Intermedio">Intermedio</option>
-            <option value="Avanzado">Avanzado</option>
-        </select>
-
-        <label for="modalidad">Filtrar por Modalidad:</label>
-        <select id="modalidad">
-            <option value="todas">Todas</option>
-            <option value="pagado">Pagadas</option>
-            <option value="gratuito">Gratuitas</option>
-        </select>
-
-        <label for="duracion">Filtrar por Duración:</label>
-        <select id="duracion">
-            <option value="todas">Todas</option>
-            <option value="corta">Corta (menos de 1 hora)</option>
-            <option value="media">Media (1-3 horas)</option>
-            <option value="larga">Larga (más de 3 horas)</option>
-        </select>
-    </section> -->
     <!-- Catálogo de conferencias -->
     
     <section class="cursos" id="catalogo">
@@ -109,8 +73,9 @@ Explora nuestras conferencias</p>
                     <h2><?php echo $row['precio'] ?></php></h2>
                     <p class="descripcion"><?php echo $row['brev_descrip'] ?>.</p>
                     <div class="buttons">
-                        <a href="detalles.html" class="add">Ver Detalles</a>
-                        <button class="like"><span>♥️</span></button>
+                        <!-- <a href="detalles.html" class="add">Ver Detalles</a> -->
+                        
+                        <!-- <button class="like"><span>♥️</span></button> -->
                     </div>
                 </div>
             </div>
@@ -146,7 +111,7 @@ Explora nuestras conferencias</p>
                 </div>
             </div>
 
-            <!-- Más conferencias gratuitas con diferentes valores de tema, nivel, modalidad y duración -->
+             Más conferencias gratuitas con diferentes valores de tema, nivel, modalidad y duración -->
         </div> -->
     </section>
 
@@ -159,5 +124,6 @@ Explora nuestras conferencias</p>
     <script src="main2.js"></script>
 
     </div>
+
     </body>
 </html>
