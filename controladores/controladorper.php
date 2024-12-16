@@ -16,9 +16,11 @@ if(!empty($_POST['btn-actualizar-perfil'])){
     $id = $_POST['id'];
     $usuario = $_POST['usuario'];
     $descripcion = $_POST['descripcion'];
+    $email = $_POST['email'];
+    $tel = $_POST['tel'];
 
-    if(!empty($usuario) && !empty($descripcion)){
-        $sql = $link->query("UPDATE usuariosreg SET usuario='$usuario', descrip_perfil='$descripcion' WHERE id=$id") ;
+    if(!empty($usuario) && !empty($descripcion) && !empty($email) && !empty($tel)){
+        $sql = $link->query("UPDATE usuariosreg SET usuario='$usuario', descrip_perfil='$descripcion', email='$email', tel='$tel' WHERE id=$id") ;
         if ($sql==true) {
            // echo"<div class='alert alert-success'>Perfil actualizado correctamente</div>";
         } else {

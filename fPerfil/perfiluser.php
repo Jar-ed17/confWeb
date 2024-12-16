@@ -50,7 +50,7 @@ if (!isset($_SESSION['usuario'])) {
                     // echo id
                     // echo "id ".$user_id."<br>";
 
-                    $sql = "SELECT usuariosreg.id, usuariosreg.usuario, usuariosreg.descrip_perfil, usuariosreg.imgUser, COUNT(conferencias.id_conf) AS numero_conferencias
+                    $sql = "SELECT usuariosreg.id, usuariosreg.usuario, usuariosreg.email, usuariosreg.tel, usuariosreg.descrip_perfil, usuariosreg.imgUser, COUNT(conferencias.id_conf) AS numero_conferencias
                                     FROM usuariosreg
                                     LEFT JOIN conferencias ON usuariosreg.id = conferencias.id_userFK
                                     WHERE usuariosreg.id = $user_id
@@ -97,6 +97,8 @@ if (!isset($_SESSION['usuario'])) {
                             <?php //require '../controladores/controladorper.php'; ?>
                             <input type="hidden" name="id" value="<?php echo $row['id'] ;?>">
                             <input type="hidden" name="usuario" value="<?php echo $row['usuario'] ;?>">
+                            <input type="text" name="email" value="<?php echo $row['email'] ;?>" class="form-control"><br>
+                            <input type="text" name="tel" value="<?php echo $row['tel'] ;?>" class="form-control" maxlength="10"><br>
                             <div class="form-floating">
                                 <textarea class="form-control" name="descripcion" placeholder="" id="floatingTextarea2" style="height: 100px"><?php echo $row['descrip_perfil'] ;?></textarea>
                             </div><br> 

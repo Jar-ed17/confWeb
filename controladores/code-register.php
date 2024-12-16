@@ -76,7 +76,8 @@
                 
                 //PREPARAR SENTENCIA  STMT= STATEMENT
 
-                $sql = "INSERT INTO usuariosreg (usuario, email, clave, imgUser) VALUES (?,?,?,'../fotoPerfil/user.png')";
+                $sql = "INSERT INTO usuariosreg (usuario, email, clave, imgUser, descrip_perfil, tel) 
+                                    VALUES (?,?,?,'../fotoPerfil/user.png','Biografía de prueba. ¡Edítala!','9999999999')";
 
                 if($stmt = mysqli_prepare($link, $sql)) {
                     mysqli_stmt_bind_param($stmt,"sss", $param_username, $param_email, $param_password);
