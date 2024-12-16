@@ -561,19 +561,19 @@ $result = $conn->query($sql);
     <div class="product-grid">
       <!-- Imagen 1 -->
       <div class="img-box">
-        <img src="/confweb/fotoPerfil/imagen1.png" alt="Imagen 1">
+        <img src="/confweb/fVideos/imagen1.png" alt="Imagen 1">
       </div>
       <!-- Imagen 2 -->
       <div class="img-box">
-        <img src="/confweb/fotoPerfil/imagen2.png" alt="Imagen 2">
+        <img src="/confweb/fVideos/imagen2.png" alt="Imagen 2">
       </div>
       <!-- Imagen 3 -->
       <div class="img-box">
-        <img src="/confweb/fotoPerfil/imagen3.png" alt="Imagen 3">
+        <img src="/confweb/fVideos/imagen3.png" alt="Imagen 3">
       </div>
       <!-- Imagen 4 -->
       <div class="img-box">
-        <img src="/confweb/fotoPerfil/imagen4.png" alt="Imagen 4">
+        <img src="/confweb/fVideos/imagen4.png" alt="Imagen 4">
       </div>
     </div>
   </div>
