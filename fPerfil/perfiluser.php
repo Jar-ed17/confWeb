@@ -233,7 +233,7 @@ if (isset($_SESSION['usuario'])) {
                     <div class="buttons">
                         <!-- Ver que hacer con ver detalles
                         Ver que hacer con ver detalles -->
-                        <a href="detalles.html?id=2" class="add">Ver Detalles</a>
+                        <a href="../fconferencias/detalles.html" class="add">Ver Detalles</a>
                         <!-- <button class="like"><span></span></button> -->
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalEliminar<?php echo $row['id_conf']; ?>">Eliminar</button>
                         <!-- Modal -->
